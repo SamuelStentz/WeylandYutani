@@ -1,7 +1,9 @@
-package com.example.owner.spacetraders;
+package com.example.owner.spacetraders.ViewModel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.owner.spacetraders.R;
 
 public class MainActivity extends AppCompatActivity {
 
