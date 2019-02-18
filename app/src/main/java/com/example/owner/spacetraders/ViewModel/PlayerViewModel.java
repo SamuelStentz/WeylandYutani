@@ -15,7 +15,12 @@ public class PlayerViewModel extends AndroidViewModel {
 
     }
 
-    public void createPlayer(Player player) {
-
+    public void createPlayer(String name, int pilot, int fighter, int trader, int engineer) {
+        player.setName(name);
+        player.setPilotSkill(pilot);
+        player.setFighterSkill(fighter);
+        player.setTraderSkill(trader);
+        player.setEngineerSkill(engineer);
+        player.setCredits(1000);
     }
 }

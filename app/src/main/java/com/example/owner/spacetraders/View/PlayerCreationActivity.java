@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.R;
@@ -35,14 +36,18 @@ public class PlayerCreationActivity extends AppCompatActivity {
     }
 
     public void onCreatePressed(View view) {
+        String name = playerName.getText().toString();
+        int pilotPoints = Integer.parseInt(pilot.getText().toString());
+        int fighterPoints = Integer.parseInt(trader.getText().toString());
+        int traderPoints = Integer.parseInt(trader.getText().toString());
+        int engineerPoints = Integer.parseInt(engineer.getText().toString());
 
-        player.setName(playerName.getText().toString());
-        player.setPilotSkill(Integer.parseInt(pilot.getText().toString()));
-        player.setFighterSkill(Integer.parseInt(fighter.getText().toString()));
-        player.setTraderSkill(Integer.parseInt(trader.getText().toString()));
-        player.setEngineerSkill(Integer.parseInt(engineer.getText().toString()));
+        if(pilotPoints + fighterPoints + traderPoints + engineerPoints != 16) {
+            Toast.makeText(PlayerCreationActivity.this, "You need to slot exacly 16 skill points", Toast.LENGTH_LONG).show();
+            return;
+        }
 
-        viewModel.createPlayer(player);
+        viewModel.createPlayer(name, pilotPoints, fighterPoints, traderPoints, engineerPoints);
 
         finish();
     }
