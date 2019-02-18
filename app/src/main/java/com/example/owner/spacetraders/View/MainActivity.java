@@ -1,7 +1,9 @@
 package com.example.owner.spacetraders.View;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, Player.Difficulty.values()));
 
+        beginGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PlayerCreationActivity.class));
+            }
+        });
 
     }
 }
