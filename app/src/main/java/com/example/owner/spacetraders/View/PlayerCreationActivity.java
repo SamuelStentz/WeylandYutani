@@ -3,6 +3,7 @@ package com.example.owner.spacetraders.View;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,7 +33,22 @@ public class PlayerCreationActivity extends AppCompatActivity {
         fighter = findViewById(R.id.fighterPoint);
         trader = findViewById(R.id.traderPoint);
         engineer = findViewById(R.id.engineerPoint);
+        Button createPlayer = findViewById(R.id.createPlayer);
+        Button cancelCreation = findViewById(R.id.cancelCreation);
 
+        createPlayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCreatePressed(v);
+            }
+        });
+
+        cancelCreation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     public void onCreatePressed(View view) {
