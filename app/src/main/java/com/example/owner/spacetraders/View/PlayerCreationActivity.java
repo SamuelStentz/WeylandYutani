@@ -43,7 +43,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
         int engineerPoints = Integer.parseInt(engineer.getText().toString());
 
         if(pilotPoints + fighterPoints + traderPoints + engineerPoints != 16) {
-            Toast.makeText(PlayerCreationActivity.this, "You need to slot exacly 16 skill points", Toast.LENGTH_LONG).show();
+            Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points", Toast.LENGTH_LONG).show();
             return;
         }
 
