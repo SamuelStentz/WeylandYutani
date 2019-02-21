@@ -60,7 +60,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
 
         if(pilotPoints + fighterPoints + traderPoints + engineerPoints != 16
             || pilotPoints < 0 || fighterPoints < 0 || traderPoints < 0 || engineerPoints < 0) {
-            Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points. Negative skill are not allowed.", Toast.LENGTH_LONG).show();
+            Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points. Negative skill points are not allowed.", Toast.LENGTH_LONG).show();
             return;
         }
 
