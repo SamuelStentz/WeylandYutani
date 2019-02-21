@@ -54,12 +54,13 @@ public class PlayerCreationActivity extends AppCompatActivity {
     public void onCreatePressed(View view) {
         String name = playerName.getText().toString();
         int pilotPoints = Integer.parseInt(pilot.getText().toString());
-        int fighterPoints = Integer.parseInt(trader.getText().toString());
+        int fighterPoints = Integer.parseInt(fighter.getText().toString());
         int traderPoints = Integer.parseInt(trader.getText().toString());
         int engineerPoints = Integer.parseInt(engineer.getText().toString());
 
-        if(pilotPoints + fighterPoints + traderPoints + engineerPoints != 16) {
-            Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points", Toast.LENGTH_LONG).show();
+        if(pilotPoints + fighterPoints + traderPoints + engineerPoints != 16
+            || pilotPoints < 0 || fighterPoints < 0 || traderPoints < 0 || engineerPoints < 0) {
+            Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points. Negative skill are not allowed.", Toast.LENGTH_LONG).show();
             return;
         }
 
