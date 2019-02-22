@@ -73,6 +73,8 @@ public class PlayerCreationActivity extends AppCompatActivity {
         Log.d("fighter", Integer.toString(viewModel.getPlayer().getFighterSkill()));
         Log.d("trader", Integer.toString(viewModel.getPlayer().getTraderSkill()));
         Log.d("engineer", Integer.toString(viewModel.getPlayer().getEngineerSkill()));
+        Log.d("Credits", Integer.toString(viewModel.getPlayer().getCredits()));
+
 
         finish();
     }
