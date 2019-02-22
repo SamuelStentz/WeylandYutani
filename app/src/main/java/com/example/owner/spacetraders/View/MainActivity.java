@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.View;
 
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,12 +12,13 @@ import android.widget.Spinner;
 
 import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.R;
+import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private Spinner difficultySpinner;
 
-    private Player player;
+    private PlayerViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         difficultySpinner = findViewById(R.id.difficultySpinner);
         Button beginGame = findViewById(R.id.beginGameButton);
+
+        mViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
         difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, Player.Difficulty.values()));
 

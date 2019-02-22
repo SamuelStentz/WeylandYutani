@@ -99,4 +99,8 @@ public class Player {
         credits = credits + add;
     }
 
+    public Difficulty getDiff() {
+        return diff;
+    }
+
 }

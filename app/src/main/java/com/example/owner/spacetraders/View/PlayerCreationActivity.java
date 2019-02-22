@@ -1,7 +1,9 @@
 package com.example.owner.spacetraders.View;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +23,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
     private EditText trader;
     private EditText engineer;
 
-    private Player player;
+    //private Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +65,14 @@ public class PlayerCreationActivity extends AppCompatActivity {
             Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points. Negative skill points are not allowed.", Toast.LENGTH_LONG).show();
             return;
         }
-
+        viewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
         viewModel.createPlayer(name, pilotPoints, fighterPoints, traderPoints, engineerPoints);
+
+        Log.d("Name", viewModel.getPlayer().getName());
+        Log.d("pilot", Integer.toString(viewModel.getPlayer().getPilotSkill()));
+        Log.d("fighter", Integer.toString(viewModel.getPlayer().getFighterSkill()));
+        Log.d("trader", Integer.toString(viewModel.getPlayer().getTraderSkill()));
+        Log.d("engineer", Integer.toString(viewModel.getPlayer().getEngineerSkill()));
 
         finish();
     }
