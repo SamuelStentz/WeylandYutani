@@ -10,9 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
+import com.example.owner.spacetraders.Model.Difficulty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         mViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
-        difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, Player.Difficulty.values()));
+        difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, Difficulty.values()));
 
         beginGame.setOnClickListener(new View.OnClickListener() {
             @Override

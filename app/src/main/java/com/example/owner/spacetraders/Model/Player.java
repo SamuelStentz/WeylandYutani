@@ -7,7 +7,6 @@ public class Player {
     private int engineerSkill;
     private int credits;
     private String name;
-    private Difficulty diff;
 
     public Player () {
         pilotSkill = 0;
@@ -19,28 +18,13 @@ public class Player {
     }
 
     public Player (String name, int pilot,
-                   int fighter, int trader, int engineer, Difficulty diff) {
+                   int fighter, int trader, int engineer) {
         this.pilotSkill = pilot;
         this.fighterSkill = fighter;
         this.traderSkill = trader;
         this.engineerSkill = engineer;
         this.name = name;
         this.credits = 1000;
-        this.diff = diff;
-    }
-
-    public Player (String name, int pilot,
-                  int fighter, int trader, int engineer) {
-        this (name, pilot, fighter, trader, engineer, Difficulty.NORMAL);
-    }
-
-    public enum Difficulty {
-        EASY("E"),
-        NORMAL("N"),
-        HARD("H");
-
-        String code;
-        Difficulty(String code) { this.code = code;}
     }
 
     public int getPilotSkill () {
@@ -97,10 +81,6 @@ public class Player {
 
     public void addCredits (int add) {
         credits = credits + add;
-    }
-
-    public Difficulty getDiff() {
-        return diff;
     }
 
 }
