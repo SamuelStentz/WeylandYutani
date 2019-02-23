@@ -54,6 +54,14 @@ public class PlayerCreationActivity extends AppCompatActivity {
     }
 
     public void onCreatePressed(View view) {
+        if (playerName.getText().toString().equals("")) {
+            Toast.makeText(PlayerCreationActivity.this, "Must enter a name for your character.", Toast.LENGTH_LONG).show();
+            return;
+        } else if (pilot.getText().toString().equals("") || fighter.getText().toString().equals("")
+                || trader.getText().toString().equals("") || engineer.getText().toString().equals("")) {
+            Toast.makeText(PlayerCreationActivity.this, "All skill sections must be filled.", Toast.LENGTH_LONG).show();
+            return;
+        }
         String name = playerName.getText().toString();
         int pilotPoints = Integer.parseInt(pilot.getText().toString());
         int fighterPoints = Integer.parseInt(fighter.getText().toString());
