@@ -1,6 +1,6 @@
 package com.example.owner.spacetraders.Model;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class GameState {
     private Player player;
@@ -21,7 +21,7 @@ public class GameState {
         this.diff = diff;
     }
 
-    public HashMap<SolarSystem, int[]> getUniverse(){
+    public Map<SolarSystem, int[]> getUniverse(){
         return univ.getStar();
     }
 

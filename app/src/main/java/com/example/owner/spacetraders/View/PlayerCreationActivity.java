@@ -1,6 +1,7 @@
 package com.example.owner.spacetraders.View;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.owner.spacetraders.Model.GameState;
 import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
@@ -76,6 +78,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
         viewModel.init(name, pilotPoints, fighterPoints, traderPoints, engineerPoints);
 
+        startActivity(new Intent(PlayerCreationActivity.this, GameStateActivity.class));
 //        Log.d("Name", viewModel.getPlayer().getName());
 //        Log.d("pilot", Integer.toString(viewModel.getPlayer().getPilotSkill()));
 //        Log.d("fighter", Integer.toString(viewModel.getPlayer().getFighterSkill()));

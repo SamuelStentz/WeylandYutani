@@ -19,6 +19,9 @@
         <activity android:name=".View.PlayerCreationActivity">
 
         </activity>
+
+        <activity android:name=".View.GameStateActivity">
+        </activity>
     </application>
 
 </manifest>

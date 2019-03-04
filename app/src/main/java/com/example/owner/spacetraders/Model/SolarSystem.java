@@ -24,6 +24,7 @@ public class SolarSystem {
     }
 
     public String toString() {
-        return String.format("Solar System %s, technology level: %s, resource level: %s", this.name, TechLevel.values()[techLevel], ResourceLevel.values()[resourceLevel]);
+        return String.format("Solar System %s | technology level: %s | resource level: %s", this.name, TechLevel.values()[techLevel], ResourceLevel.values()[resourceLevel]);
+
     }
 }

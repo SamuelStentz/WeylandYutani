@@ -1,14 +1,18 @@
 package com.example.owner.spacetraders.Model;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
 import java.util.Iterator;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.Set;
 
 public class Universe {
-    private HashMap<SolarSystem, int[]> map = new HashMap<>();
-    private LinkedList<SolarSystem> list = SolarSystem.generateSolarySystem();
+    private Map<SolarSystem, int[]> map = new HashMap<>();
+    private Set<int[]> set = new HashSet<>();
+    private List<SolarSystem> list = SolarSystem.generateSolarySystem();
 
     public Universe() {
         generateUniverse();
@@ -19,11 +23,15 @@ public class Universe {
             Random rand = new Random();
             int[] coordinate = new int[]{rand.nextInt(151), rand.nextInt(101)};
             SolarSystem sys = list.get(i);
+            while(set.contains(coordinate)) {
+                coordinate = new int[]{rand.nextInt(151), rand.nextInt(101)};
+            }
+            set.add(coordinate);
             map.put(sys, coordinate);
         }
     }
 
-    public HashMap<SolarSystem, int[]> getStar() {
+    public Map<SolarSystem, int[]> getStar() {
         return map;
     }
 
@@ -34,7 +42,7 @@ public class Universe {
         while (iterator.hasNext()) {
             SolarSystem s = iterator.next();
             int[] coordinate = map.get(s);
-            half = half + s.toString() + "location: (" + coordinate[0] + ", " + coordinate[1] + ").\n";
+            half = half + s.toString() + " | location: (" + coordinate[0] + ", " + coordinate[1] + ").\n";
         }
         return String.format("Universe: \n" + half);
     }
