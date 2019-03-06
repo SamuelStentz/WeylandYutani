@@ -7,13 +7,25 @@ public class SolarSystem {
     private static LinkedList<SolarSystem> map = new LinkedList<>();
     private int techLevel;
     private int resourceLevel;
-
+    private Planet planet;
+    private Trader trader;
 
     public SolarSystem(Planet planet) {
         this.name = planet.getName();
         this.techLevel = planet.getTechLevel();
         this.resourceLevel = planet.getResourceLevel();
+        this.planet = planet;
+        this.trader = new Trader(this);
     }
+
+    public int getTechLevel() {
+        return techLevel;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public static LinkedList<SolarSystem> generateSolarySystem() {
         Planet pl = new Planet();
         LinkedList<Planet> planetList = pl.getPlanet();
@@ -24,7 +36,7 @@ public class SolarSystem {
     }
 
     public String toString() {
-        return String.format("Solar System %s | technology level: %s | resource level: %s", this.name, TechLevel.values()[techLevel], ResourceLevel.values()[resourceLevel]);
-
+        return String.format("Solar System %s | technology level: %s | resource level: %s\n %s",
+                this.name, TechLevel.values()[techLevel], ResourceLevel.values()[resourceLevel],trader);
     }
 }

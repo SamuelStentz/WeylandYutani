@@ -1,9 +1,37 @@
 package com.example.owner.spacetraders.Model;
 
-public interface Spaceship {
-    enum SpaceshipType {
-        GNAT
+public class Spaceship {
+    private SpaceshipType type;
+
+    public Spaceship() {
+        type = SpaceshipType.GNAT;
     }
 
-    SpaceshipType getSpaceshipType();
+    public int getCapacity() {
+        return type.getCapacity();
+    }
+
+    enum SpaceshipType {
+        GNAT("gnat", 100);
+
+        private String name;
+        private int capacity;
+
+        SpaceshipType (String s, int c) {
+            capacity = c;
+            name = s;
+        }
+
+        public int getCapacity () {
+            return capacity;
+        }
+
+        public String toString () {
+            return name;
+        }
+    }
+
+    public SpaceshipType getSpaceshipType() {
+        return this.type;
+    }
 }

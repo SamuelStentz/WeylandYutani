@@ -1,13 +1,15 @@
 package com.example.owner.spacetraders.Model;
 
 public class Player {
+
     private int pilotSkill;
     private int fighterSkill;
     private int traderSkill;
     private int engineerSkill;
     private int credits;
     private String name;
-
+    private Spaceship ship;
+    private Inventory inventory;
     public Player () {
         pilotSkill = 0;
         fighterSkill = 0;
@@ -24,7 +26,9 @@ public class Player {
         this.traderSkill = trader;
         this.engineerSkill = engineer;
         this.name = name;
-        this.credits = 1000;
+        this.credits = 10000;
+        this.ship = new Spaceship();
+        this.inventory = new PlayerInventory(this);
     }
 
     public int getPilotSkill () {
@@ -81,6 +85,16 @@ public class Player {
 
     public void addCredits (int add) {
         credits = credits + add;
+    }
+
+    public Spaceship getShip () { return ship; }
+
+    public void setShip (Spaceship s) { ship = s; }
+
+
+    public String toString() {
+        return String.format("Player: %s, pilot points: %s, fighter points: %s, trader points: %s, engineer points: %s, credits: %s\n%s",
+                getName(), getPilotSkill(), getFighterSkill(), getTraderSkill(), getEngineerSkill(), this.getCredits(),this.inventory.toString());
     }
 
 }

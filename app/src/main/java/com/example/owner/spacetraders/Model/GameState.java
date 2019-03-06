@@ -26,8 +26,7 @@ public class GameState {
     }
 
     public String toString() {
-        return String.format("Game with player: %s, pilot points: %s, fighter points: %s, trader points: %s, engineer points: %s",
-                player.getName(), player.getPilotSkill(), player.getFighterSkill(), player.getTraderSkill(), player.getEngineerSkill());
+        return String.format("Game with %s", player.toString());
     }
 
 }

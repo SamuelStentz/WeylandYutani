@@ -8,14 +8,15 @@ public class Planet {
     private LinkedList<Planet> list = new LinkedList<>();
     private int techLevel;
     private int resourceLevel;
+    private Trader trader;
 
     public Planet(String name) {
         this.name = name;
         Random rand = new Random();
-        techLevel = rand.nextInt(7)
-        ;
+        techLevel = rand.nextInt(7);
         resourceLevel = rand.nextInt(13);
     }
+
     public Planet () {
         generate();
     }
@@ -47,4 +48,5 @@ public class Planet {
     public int getResourceLevel() {
         return this.resourceLevel;
     }
+
 }
