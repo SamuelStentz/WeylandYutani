@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".View.Inventory"></activity>
+        <activity android:name=".View.Game_Status" />
         <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,12 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.PlayerCreationActivity">
-
-        </activity>
-
-        <activity android:name=".View.GameStateActivity">
-        </activity>
+        <activity android:name=".View.PlayerCreationActivity" />
+        <activity android:name=".View.GameStateActivity" />
     </application>
 
 </manifest>
