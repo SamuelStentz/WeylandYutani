@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.owner.spacetraders.View.Inventory">
+    tools:context="com.example.owner.spacetraders.View.Sell_Interface">
 
     <TextView
         android:id="@+id/textView10"
@@ -23,7 +23,60 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/current_capacity_text"
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Select the amount of an item to sell"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Credits"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_capacity_sell_text" />
+
+    <TextView
+        android:id="@+id/credits_sell_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="100"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/current_capacity_sell_text"
+        app:layout_constraintVertical_bias="0.318" />
+
+    <TextView
+        android:id="@+id/current_capacity_sell_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,7 +104,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/maximum_capacity_text"
+        android:id="@+id/maximum_capacity_sell_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -84,26 +137,39 @@
         app:layout_constraintGuide_begin="205dp" />
 
     <Button
-        android:id="@+id/inventory_return_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/sell_return_button"
+        android:layout_width="185dp"
         android:layout_height="59dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Return to Current Status"
+        android:layout_marginBottom="16dp"
+        android:text="Return"
+        android:textSize="20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sell_button"
+        android:layout_width="185dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Sell"
         android:textSize="20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/inventory_return_button" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="395dp"
         android:layout_height="463dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="175dp"
         android:fillViewport="true"
-        >
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="175dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -129,6 +195,7 @@
 
                 </TableRow>
             </TableRow>
+
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
@@ -145,9 +212,9 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:text="Item Type"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:text="Item"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -157,8 +224,8 @@
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="Quantity"
-                    android:textStyle="bold"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
                 <TextView
 
@@ -168,9 +235,10 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="MTLP"
-                    android:textStyle="bold"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:text="Price"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+
                 <TextView
 
                     android:layout_width="wrap_content"
@@ -179,9 +247,9 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="MTLS"
-                    android:textStyle="bold"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:text="Amount"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -204,7 +272,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_water_quantity"
+                    android:id="@+id/sell_water_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -215,7 +283,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_water_tech"
+                    android:id="@+id/sell_water_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
@@ -224,8 +292,9 @@
                     android:gravity="center"
                     android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/water_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
@@ -233,6 +302,7 @@
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -254,7 +324,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_furs_quantity"
+                    android:id="@+id/sell_furs_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -265,7 +335,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_furs_tech"
+                    android:id="@+id/sell_furs_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
@@ -274,8 +344,9 @@
                     android:gravity="center"
                     android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/furs_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
@@ -283,6 +354,7 @@
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -305,7 +377,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_food_quantity"
+                    android:id="@+id/sell_food_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -316,7 +388,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_food_tech"
+                    android:id="@+id/sell_food_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
@@ -325,15 +397,17 @@
                     android:gravity="center"
                     android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/food_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -355,7 +429,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_ore_quantity"
+                    android:id="@+id/sell_ore_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -366,24 +440,26 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_ore_tech"
+                    android:id="@+id/sell_ore_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="2"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/ore_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="2"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -405,7 +481,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_games_quantity"
+                    android:id="@+id/sell_games_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -416,24 +492,26 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_games_tech"
+                    android:id="@+id/sell_games_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="3"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/games_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -455,7 +533,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_firearms_quantity"
+                    android:id="@+id/sell_firearms_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -466,24 +544,26 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_firearms_tech"
+                    android:id="@+id/sell_firearms_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="3"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/firearms_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -505,7 +585,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_medicine_quantity"
+                    android:id="@+id/sell_medicine_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -516,24 +596,26 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_medicine_tech"
+                    android:id="@+id/sell_medicine_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/medicine_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -555,7 +637,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_machines_quantity"
+                    android:id="@+id/sell_machines_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -566,24 +648,26 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_machines_tech"
+                    android:id="@+id/sell_machines_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/machines_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="3"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -605,7 +689,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_narcotics_quantity"
+                    android:id="@+id/sell_narcotics_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -616,17 +700,18 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_narcotics_tech"
+                    android:id="@+id/sell_narcotics_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="5"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/narcotics_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
@@ -634,6 +719,7 @@
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -655,7 +741,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_robots_quantity"
+                    android:id="@+id/sell_robots_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="1"
@@ -666,24 +752,26 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/inventory_robots_tech"
+                    android:id="@+id/sell_robots_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="6"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-                <TextView
 
+                <EditText
+                    android:id="@+id/robots_sell_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="3"
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="0"
+                    android:inputType="numberSigned"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
