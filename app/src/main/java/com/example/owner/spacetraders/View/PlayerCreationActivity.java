@@ -78,7 +78,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
         viewModel.init(name, pilotPoints, fighterPoints, traderPoints, engineerPoints);
 
-        startActivity(new Intent(PlayerCreationActivity.this, GameStateActivity.class));
+        startActivity(new Intent(PlayerCreationActivity.this, Game_Status.class));
 //        Log.d("Name", viewModel.getPlayer().getName());
 //        Log.d("pilot", Integer.toString(viewModel.getPlayer().getPilotSkill()));
 //        Log.d("fighter", Integer.toString(viewModel.getPlayer().getFighterSkill()));
