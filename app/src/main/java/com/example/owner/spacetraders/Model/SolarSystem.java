@@ -26,6 +26,10 @@ public class SolarSystem {
         return name;
     }
 
+    public Planet getPlanet() {
+        return planet;
+    }
+
     public static LinkedList<SolarSystem> generateSolarySystem() {
         Planet pl = new Planet();
         LinkedList<Planet> planetList = pl.getPlanet();

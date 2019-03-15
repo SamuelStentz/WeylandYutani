@@ -77,7 +77,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
-        android:text="tech"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +91,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
-        android:text="Skill"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +105,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
-        android:text="credits"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,9 +148,11 @@
         android:id="@+id/button3"
         android:layout_width="186dp"
         android:layout_height="57dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="16dp"
         android:text="Return"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="658dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"

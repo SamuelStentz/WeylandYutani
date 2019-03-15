@@ -6,6 +6,7 @@ public class GameState {
     private Player player;
     private Difficulty diff;
     private Universe univ;
+    private Planet position;
 
     public GameState() {
         player = null;
@@ -17,6 +18,10 @@ public class GameState {
         this.player = player;
     }
 
+    public void setUniverse(Universe universe) {this.univ = universe; }
+
+    public void setPosition(Planet position) {this.position = position; }
+
     public void setDiff(Difficulty diff) {
         this.diff = diff;
     }
@@ -27,6 +32,14 @@ public class GameState {
 
     public String toString() {
         return String.format("Game with %s", player.toString());
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Planet getPosition() {
+        return position;
     }
 
 }
