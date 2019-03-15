@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.owner.spacetraders.Model.GameState;
 import com.example.owner.spacetraders.Model.Item;
 import com.example.owner.spacetraders.Model.PlayerInventory;
+import com.example.owner.spacetraders.Model.TraderInventory;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
 
@@ -61,6 +62,8 @@ public class Purchase extends AppCompatActivity {
     private int[] stocks;
     private int[] prices;
     private int startCredits;
+    private PlayerInventory pI;
+    private TraderInventory tI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +76,9 @@ public class Purchase extends AppCompatActivity {
         maximumCapacity = findViewById(R.id.maximum_capacity_buy_text);
         credits = findViewById(R.id.credits_buy_text);
 
-        PlayerInventory pinv = (PlayerInventory) game.getPlayer().getInventory();
-        currentCapacity.setText(String.format("%d", pinv.getCapacity()));
+        pI = (PlayerInventory) game.getPlayer().getInventory();
+        tI = (TraderInventory) game.getPosition().getTrader().getInventory();
+        currentCapacity.setText(String.format("%d", pI.getCapacity()));
         maximumCapacity.setText(String.format("%d", game.getPlayer().getShip().getCapacity()));
 
         startCredits = game.getPlayer().getCredits();
@@ -113,10 +117,9 @@ public class Purchase extends AppCompatActivity {
         narcoticsQ = findViewById(R.id.narcotics_buy_amount);
         robotsQ = findViewById(R.id.robots_buy_amount);
 
-        Random r = new Random();
         stocks = new int[10];
         for(int i = 0; i < stocks.length; i++) {
-            stocks[i] =  game.getPosition().getResourceLevel() + 1 * 75;
+            stocks[i] =  tI.getQuantity(Item.ITEM_LIST.get(i + 1));
         }
 
         waterS.setText(String.format("%d", stocks[0]));
@@ -132,7 +135,7 @@ public class Purchase extends AppCompatActivity {
 
         prices = new int[10];
         for(int i = 0; i < prices.length; i++) {
-            prices[i] =  game.getPosition().getTrader().getInventory().getPrice(Item.ITEM_LIST.get(i + 1)) + 50;
+            prices[i] =  tI.getPrice(Item.ITEM_LIST.get(i + 1)) + 50;
         }
 
         water.setText(String.format("%d", prices[0]));
@@ -174,8 +177,6 @@ public class Purchase extends AppCompatActivity {
     }
 
     public void onPurchasePressed(View view) {
-
-        PlayerInventory pI = game.getPlayer().getInventory();
 
         if (waterQ.getText().toString().equals("")
                 || foodQ.getText().toString().equals("")
@@ -226,6 +227,7 @@ public class Purchase extends AppCompatActivity {
             pI.addItem(Item.ITEM_LIST.get(j + 1), iPA[j]);
             startCredits -= iPA[j] * prices[j];
             stocks[j] = stocks[j] - iPA[j];
+            tI.removeItem(Item.ITEM_LIST.get(j + 1), iPA[j]);
         }
 
         game.getPlayer().setCredits(startCredits);
@@ -244,19 +246,16 @@ public class Purchase extends AppCompatActivity {
         credits.setText(String.format("%d", startCredits));
         currentCapacity.setText(String.format("%d", pI.getCapacity()));
 
-        waterQ.setText("");
-        foodQ.setText("");
-        fursQ.setText("");
-        oreQ.setText("");
-        gamesQ.setText("");
-        firearmsQ.setText("");
-        medicineQ.setText("");
-        machinesQ.setText("");
-        narcoticsQ.setText("");
-        robotsQ.setText("");
+        waterQ.setText("0");
+        foodQ.setText("0");
+        fursQ.setText("0");
+        oreQ.setText("0");
+        gamesQ.setText("0");
+        firearmsQ.setText("0");
+        medicineQ.setText("0");
+        machinesQ.setText("0");
+        narcoticsQ.setText("0");
+        robotsQ.setText("0");
 
-        //startActivity(new Intent(Purchase.this, Purchase.class));
-
-        //finish();
     }
 }

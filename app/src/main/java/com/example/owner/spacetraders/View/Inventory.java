@@ -16,6 +16,9 @@ public class Inventory extends AppCompatActivity {
 
     private GameState game;
 
+    private TextView cC;
+    private TextView mC;
+
     private TextView water;
     private TextView furs;
     private TextView food;
@@ -34,6 +37,9 @@ public class Inventory extends AppCompatActivity {
 
         game = Model.getInst().getGame();
 
+        cC = findViewById(R.id.current_capacity_text);
+        mC = findViewById(R.id.maximum_capacity_text);
+
         water = findViewById(R.id.inventory_water_quantity);
         furs = findViewById(R.id.inventory_furs_quantity);
         food = findViewById(R.id.inventory_food_quantity);
@@ -44,6 +50,9 @@ public class Inventory extends AppCompatActivity {
         machines = findViewById(R.id.inventory_machines_quantity);
         narcotics = findViewById(R.id.inventory_narcotics_quantity);
         robots = findViewById(R.id.inventory_robots_quantity);
+
+        cC.setText(String.format("%d", game.getPlayer().getInventory().getCapacity()));
+        mC.setText(String.format("%d", game.getPlayer().getShip().getCapacity()));
 
         water.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(1))));
         furs.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(3))));

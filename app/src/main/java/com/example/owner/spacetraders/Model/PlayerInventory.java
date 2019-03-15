@@ -65,6 +65,7 @@ public class PlayerInventory implements Inventory {
             return false;
         }
         map.put(i, temp - k);
+        capacity -= k;
         return true;
     }
 
