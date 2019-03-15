@@ -50,4 +50,8 @@ public class Planet {
         return this.resourceLevel;
     }
 
+    public Trader getTrader() {
+        return trader;
+    }
+
 }

@@ -13,6 +13,9 @@ public class Item {
     private String name;
     private ItemType type;
 
+    public Item () {
+
+    }
 
     public Item (String n, ItemType type, int mtlp, int mtlu, int ttp, int ipl,
                  int basePrice, int var) {

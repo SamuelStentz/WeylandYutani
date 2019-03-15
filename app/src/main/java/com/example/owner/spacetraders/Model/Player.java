@@ -91,6 +91,10 @@ public class Player {
 
     public void setShip (Spaceship s) { ship = s; }
 
+    public PlayerInventory getInventory() {
+        return (PlayerInventory) inventory;
+    }
+
 
     public String toString() {
         return String.format("Player: %s, pilot points: %s, fighter points: %s, trader points: %s, engineer points: %s, credits: %s\n%s",

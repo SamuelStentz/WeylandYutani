@@ -9,6 +9,8 @@ import android.util.Log;
 
 import com.example.owner.spacetraders.Model.Difficulty;
 import com.example.owner.spacetraders.Model.GameState;
+import com.example.owner.spacetraders.Model.Item;
+import com.example.owner.spacetraders.Model.ItemType;
 import com.example.owner.spacetraders.Model.Planet;
 import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.Model.SolarSystem;
@@ -39,6 +41,7 @@ public class PlayerViewModel extends AndroidViewModel {
         Random r = new Random();
         SolarSystem sol = solarSystems.get(r.nextInt(solarSystems.size()));
         game.setPosition(sol.getPlanet());
+
         Log.d("Print", player.toString());
         Log.d("Print", game.toString());
         Log.d("Print", univ.toString());

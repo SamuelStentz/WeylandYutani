@@ -64,7 +64,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="100"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -168,8 +167,8 @@
         android:layout_width="395dp"
         android:layout_height="463dp"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="175dp">
+        app:layout_constraintBottom_toTopOf="@+id/sell_return_button"
+        tools:layout_editor_absoluteX="8dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -301,8 +300,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -353,8 +352,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -406,8 +405,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -458,8 +457,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -510,8 +509,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -562,8 +561,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -614,8 +613,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -666,8 +665,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -718,8 +717,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -770,8 +769,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 

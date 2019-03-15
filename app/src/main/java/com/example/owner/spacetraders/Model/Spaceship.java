@@ -12,7 +12,7 @@ public class Spaceship {
     }
 
     enum SpaceshipType {
-        GNAT("gnat", 100);
+        GNAT("gnat", 5);
 
         private String name;
         private int capacity;

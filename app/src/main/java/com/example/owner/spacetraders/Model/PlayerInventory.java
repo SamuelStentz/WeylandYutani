@@ -21,6 +21,9 @@ public class PlayerInventory implements Inventory {
     public int getPrice(Item i) {
         return i.getBasePrice();
     }
+    public int getCapacity() {
+        return capacity;
+    }
 
     public int getQuantity(Item i) {
         if (map.containsKey(i)) {
