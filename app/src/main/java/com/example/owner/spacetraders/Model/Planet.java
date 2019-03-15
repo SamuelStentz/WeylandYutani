@@ -15,6 +15,7 @@ public class Planet {
         Random rand = new Random();
         techLevel = rand.nextInt(7);
         resourceLevel = rand.nextInt(13);
+        trader = new Trader(this);
     }
 
     public Planet () {

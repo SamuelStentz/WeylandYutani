@@ -16,8 +16,8 @@ public class TraderInventory implements Inventory {
         trader = t;
 
         for (Item i : Item.ITEM_LIST) {
-            if (trader.getSolarSystem().getTechLevel() >= i.getMTLP()) {
-                if (trader.getSolarSystem().getTechLevel() >= i.getTTP()){
+            if (trader.getPlanet().getTechLevel() >= i.getMTLP()) {
+                if (trader.getPlanet().getTechLevel() >= i.getTTP()){
                     map.put(i, (int) (Math.random() * 6));
                 } else {
                     map.put(i, (int) (Math.random() * 3));
@@ -27,7 +27,7 @@ public class TraderInventory implements Inventory {
 
         for(Item i : map.keySet()){
             cost.put(i, i.getBasePrice()
-                    + i.getIPL() * (trader.getSolarSystem().getTechLevel()
+                    + i.getIPL() * (trader.getPlanet().getTechLevel()
                     - i.getMTLP()) + (int) Math.random()*i.getVar());
         }
 
@@ -55,7 +55,7 @@ public class TraderInventory implements Inventory {
 
     public boolean validAdd (Item i, int k) {
 
-        if (trader.getSolarSystem().getTechLevel() < i.getMTLU()) {
+        if (trader.getPlanet().getTechLevel() < i.getMTLU()) {
             return false;
         }
 
@@ -68,7 +68,7 @@ public class TraderInventory implements Inventory {
 
     public boolean addItem(Item i, int k) {
 
-        if (trader.getSolarSystem().getTechLevel() < i.getMTLU()) {
+        if (trader.getPlanet().getTechLevel() < i.getMTLU()) {
             return false;
         }
 
