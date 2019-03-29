@@ -42,15 +42,16 @@ public class Spaceship {
     }
 
     enum SpaceshipType {
-        GNAT("gnat", 5);
+        GNAT("gnat", 5, 100);
 
         private String name;
         private int capacity;
         private int maxFuel;
 
-        SpaceshipType (String s, int c) {
+        SpaceshipType (String s, int c, int f) {
             capacity = c;
             name = s;
+            maxFuel = f;
         }
 
         public int getCapacity () {
