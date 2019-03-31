@@ -1,6 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.List;
 import java.util.Iterator;
@@ -46,5 +47,15 @@ public class Universe {
         return String.format("Universe: \n" + half);
     }
 
+    public double distanceBetween(SolarSystem a, SolarSystem b) {
+        int[] aCoordinates = map.get(a);
+        int[] bCoordinates = map.get(b);
+        double xdiff = aCoordinates[0] - bCoordinates[0];
+        double ydiff = aCoordinates[1] - bCoordinates[1];
+        return Math.sqrt(Math.pow(xdiff, 2) + Math.pow(ydiff, 2));
+    }
 
+    public List<SolarSystem> getList() {
+        return list;
+    }
 }

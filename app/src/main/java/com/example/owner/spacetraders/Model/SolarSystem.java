@@ -41,4 +41,8 @@ public class SolarSystem {
         return String.format("Solar System %s | technology level: %s | resource level: %s\n",
                 this.name, TechLevel.values()[techLevel], ResourceLevel.values()[resourceLevel]);
     }
+
+    public Trader getTrader() {
+        return planet.getTrader();
+    }
 }

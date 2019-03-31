@@ -40,7 +40,7 @@ public class PlayerViewModel extends AndroidViewModel {
         List<SolarSystem> solarSystems = new ArrayList<>(univ.getStar().keySet());
         Random r = new Random();
         SolarSystem sol = solarSystems.get(r.nextInt(solarSystems.size()));
-        game.setPosition(sol.getPlanet());
+        game.setPosition(sol);
 
         Log.d("Print", player.toString());
         Log.d("Print", game.toString());
