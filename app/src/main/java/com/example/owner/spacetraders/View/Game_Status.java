@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.owner.spacetraders.Model.GameState;
 import com.example.owner.spacetraders.Model.Player;
+import com.example.owner.spacetraders.Model.Spaceship;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
 import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
@@ -17,6 +18,7 @@ public class Game_Status extends AppCompatActivity {
 
     private TextView credits;
     private TextView location;
+    private TextView fuel;
 
     private GameState game;
 
@@ -29,6 +31,7 @@ public class Game_Status extends AppCompatActivity {
 
         credits = findViewById(R.id.credits_text);
         location = findViewById(R.id.planet_location_text);
+        fuel = findViewById(R.id.fuel_text);
 
         Button inventoryButton = findViewById(R.id.inventory_button);
         Button tradeButton = findViewById(R.id.trade_info);
@@ -56,7 +59,8 @@ public class Game_Status extends AppCompatActivity {
         });
 
         credits.setText(String.format("%d", game.getPlayer().getCredits()));
-        location.setText(game.getPosition().getName());
+        location.setText(String.format("%s", game.getPosition().getName()));
+        fuel.setText(String.format("%.2f", game.getPlayer().getShip().getCurrentFuel()));
     }
 
     public void onInventoryPressed(View view) {
