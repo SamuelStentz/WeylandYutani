@@ -32,6 +32,7 @@ public class Game_Status extends AppCompatActivity {
 
         Button inventoryButton = findViewById(R.id.inventory_button);
         Button tradeButton = findViewById(R.id.trade_info);
+        Button travelButton = findViewById(R.id.travel_button);
 
         inventoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,13 @@ public class Game_Status extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onTradePressed(v);
+            }
+        });
+
+        travelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onTravelPressed(v);
             }
         });
 
@@ -61,6 +69,13 @@ public class Game_Status extends AppCompatActivity {
     public void onTradePressed(View view) {
 
         startActivity(new Intent(Game_Status.this, Market.class));
+
+        finish();
+    }
+
+    public void onTravelPressed(View view) {
+
+        startActivity(new Intent(Game_Status.this, Travel.class));
 
         finish();
     }

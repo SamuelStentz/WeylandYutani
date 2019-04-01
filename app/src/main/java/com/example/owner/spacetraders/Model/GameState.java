@@ -61,10 +61,10 @@ public class GameState {
     public void traverse(int a) {
         SolarSystem target = univ.getList().get(a);
         List<SolarSystem> inRange = inRange();
-        if (!inRange.contains(target)) {
-            throw new IllegalArgumentException("Solarsystem not in range.");
-        } else if (target.getName().equals(position.getName())){
+        if (target.getName().equals(position.getName())){
             throw new IllegalArgumentException("Already on that solarsystem.");
+        } else if (!inRange.contains(target)) {
+            throw new IllegalArgumentException("Solarsystem not in range.");
         } else {
             player.getShip().loseFuel(univ.distanceBetween(target, position));
             position = target;
