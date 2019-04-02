@@ -66,8 +66,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
-        android:text="100"
+        android:layout_marginBottom="8dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -147,7 +146,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:text="Return"
-        android:textSize="20"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.9"
@@ -161,7 +160,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:text="Purchase"
-        android:textSize="20"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/inventory_return_button" />
@@ -171,8 +170,8 @@
         android:layout_width="395dp"
         android:layout_height="463dp"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="175dp">
+        app:layout_constraintBottom_toTopOf="@+id/buy_return_button"
+        tools:layout_editor_absoluteX="8dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -293,7 +292,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -304,8 +302,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -345,7 +343,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -356,8 +353,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -398,7 +395,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -409,8 +405,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -450,7 +446,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -461,8 +456,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -502,7 +497,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -513,8 +507,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -554,7 +548,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -565,8 +558,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -606,7 +599,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -617,8 +609,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -658,7 +650,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -669,8 +660,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -710,7 +701,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -721,8 +711,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -762,7 +752,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
@@ -773,8 +762,8 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="0"
                     android:inputType="numberSigned"
+                    android:text="0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 

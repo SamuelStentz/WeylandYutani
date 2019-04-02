@@ -26,7 +26,7 @@ public class Player {
         this.traderSkill = trader;
         this.engineerSkill = engineer;
         this.name = name;
-        this.credits = 10000;
+        this.credits = 1000;
         this.ship = new Spaceship();
         this.inventory = new PlayerInventory(this);
     }
@@ -90,6 +90,10 @@ public class Player {
     public Spaceship getShip () { return ship; }
 
     public void setShip (Spaceship s) { ship = s; }
+
+    public PlayerInventory getInventory() {
+        return (PlayerInventory) inventory;
+    }
 
 
     public String toString() {

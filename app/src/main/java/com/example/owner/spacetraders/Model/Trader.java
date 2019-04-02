@@ -1,18 +1,18 @@
 package com.example.owner.spacetraders.Model;
 
 public class Trader {
-    private SolarSystem solarSystem;
+    private Planet planet;
     private Inventory inventory;
     private int credits;
 
-    public Trader (SolarSystem ss) {
-        this.solarSystem = ss;
+    public Trader (Planet planet) {
+        this.planet = planet;
         this.inventory = new TraderInventory(this);
-        this.credits = (int) (solarSystem.getTechLevel() * Math.random() * 100);
+        this.credits = (int) (planet.getTechLevel() * Math.random() * 100);
     }
 
-    public SolarSystem getSolarSystem () {
-        return solarSystem;
+    public Planet getPlanet() {
+        return planet;
     }
 
     public int getCredits () {
@@ -24,6 +24,6 @@ public class Trader {
     }
 
     public String toString () {
-        return String.format("Trader of %s, \n%s",solarSystem.getName(), inventory.toString());
+        return String.format("Trader of %s, \n%s",planet.getName(), inventory.toString());
     }
 }

@@ -12,6 +12,7 @@
         <activity android:name=".View.Purchase"></activity>
         <activity android:name=".View.Sell_Interface" />
         <activity android:name=".View.Market" />
+        <activity android:name=".View.Travel" />
         <activity android:name=".View.Inventory" />
         <activity android:name=".View.Game_Status" />
         <activity android:name=".View.MainActivity">
