@@ -31,11 +31,11 @@ public class Player {
         this.inventory = new PlayerInventory(this);
     }
 
-    public int getPilotSkill () {
+    private int getPilotSkill() {
         return pilotSkill;
     }
 
-    public int getFighterSkill () {
+    private int getFighterSkill() {
         return fighterSkill;
     }
 
@@ -43,7 +43,7 @@ public class Player {
         return traderSkill;
     }
 
-    public int getEngineerSkill () {
+    private int getEngineerSkill() {
         return engineerSkill;
     }
 
@@ -51,7 +51,7 @@ public class Player {
         return credits;
     }
 
-    public String getName () {
+    private String getName() {
         return name;
     }
 

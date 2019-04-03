@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class PlayerInventory implements Inventory {
 
-    private Player player;
-    private Map<Item, Integer> map;
+    private final Player player;
+    private final Map<Item, Integer> map;
     private int capacity;
 
     public PlayerInventory(Player p) {
@@ -34,7 +34,7 @@ public class PlayerInventory implements Inventory {
     }
 
     public boolean addItem(Item i, int k) {
-        if (player.getShip().getCapacity() < capacity + k) {
+        if (player.getShip().getCapacity() < (capacity + k)) {
             return false;
         }
 
@@ -48,10 +48,7 @@ public class PlayerInventory implements Inventory {
     }
 
     public boolean validAdd(Item i, int k) {
-        if (player.getShip().getCapacity() < capacity + k) {
-            return false;
-        }
-        return true;
+        return player.getShip().getCapacity() >= (capacity + k);
     }
 
 
@@ -75,10 +72,7 @@ public class PlayerInventory implements Inventory {
         }
 
         int temp = map.get(i);
-        if (temp < k) {
-            return false;
-        }
-        return true;
+        return temp >= k;
     }
 
     public String toString () {

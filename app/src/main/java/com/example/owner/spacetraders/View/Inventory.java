@@ -70,12 +70,12 @@ public class Inventory extends AppCompatActivity {
         inventoryReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onInventoryReturnPressed(v);
+                onInventoryReturnPressed();
             }
         });
     }
 
-    public void onInventoryReturnPressed(View view) {
+    private void onInventoryReturnPressed() {
 
         startActivity(new Intent(Inventory.this, Game_Status.class));
 

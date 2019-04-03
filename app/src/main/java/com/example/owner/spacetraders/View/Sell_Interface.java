@@ -59,7 +59,7 @@ public class Sell_Interface extends AppCompatActivity {
     private int[] iStocks;
     private int[] prices;
     private int startCredits;
-    PlayerInventory pI;
+    private PlayerInventory pI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,14 +74,14 @@ public class Sell_Interface extends AppCompatActivity {
         sellReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onSellReturnPressed(v);
+                onSellReturnPressed();
             }
         });
 
         sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onSellPressed(v);
+                onSellPressed();
             }
         });
 
@@ -162,18 +162,18 @@ public class Sell_Interface extends AppCompatActivity {
         robotsQ = findViewById(R.id.robots_sell_amount);
     }
 
-    public void onSellPressed(View view) {
+    private void onSellPressed() {
 
-        if (waterQ.getText().toString().equals("")
-                || foodQ.getText().toString().equals("")
-                || fursQ.getText().toString().equals("")
-                || oreQ.getText().toString().equals("")
-                || gamesQ.getText().toString().equals("")
-                || firearmsQ.getText().toString().equals("")
-                || medicineQ.getText().toString().equals("")
-                || machinesQ.getText().toString().equals("")
-                || narcoticsQ.getText().toString().equals("")
-                || robotsQ.getText().toString().equals("")) {
+        if ("".equals(waterQ.getText().toString())
+                || "".equals(foodQ.getText().toString())
+                || "".equals(fursQ.getText().toString())
+                || "".equals(oreQ.getText().toString())
+                || "".equals(gamesQ.getText().toString())
+                || "".equals(firearmsQ.getText().toString())
+                || "".equals(medicineQ.getText().toString())
+                || "".equals(machinesQ.getText().toString())
+                || "".equals(narcoticsQ.getText().toString())
+                || "".equals(robotsQ.getText().toString())) {
             Toast.makeText(Sell_Interface.this, "MUST enter integers for each box under amount (enter 0 if not selling that item).", Toast.LENGTH_LONG).show();
             return;
         }
@@ -231,7 +231,7 @@ public class Sell_Interface extends AppCompatActivity {
 
     }
 
-    public void onSellReturnPressed(View view) {
+    private void onSellReturnPressed() {
 
         startActivity(new Intent(Sell_Interface.this, Game_Status.class));
 

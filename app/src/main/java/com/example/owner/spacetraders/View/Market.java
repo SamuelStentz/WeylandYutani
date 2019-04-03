@@ -41,40 +41,40 @@ public class Market extends AppCompatActivity {
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBuyPressed(v);
+                onBuyPressed();
             }
         });
 
         sellButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onSellPressed(v);
+                onSellPressed();
             }
         });
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onReturnPressed(v);
+                onReturnPressed();
             }
         });
     }
 
-    public void onBuyPressed(View view) {
+    private void onBuyPressed() {
 
         startActivity(new Intent(Market.this, Purchase.class));
 
         finish();
     }
 
-    public void onSellPressed(View view) {
+    private void onSellPressed() {
 
         startActivity(new Intent(Market.this, Sell_Interface.class));
 
         finish();
     }
 
-    public void onReturnPressed(View view) {
+    private void onReturnPressed() {
 
         startActivity(new Intent(Market.this, Game_Status.class));
 

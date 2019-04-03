@@ -5,6 +5,6 @@ public enum Difficulty {
     NORMAL("N"),
     HARD("H");
 
-    String code;
+    final String code;
     Difficulty(String code) { this.code = code;}
 }

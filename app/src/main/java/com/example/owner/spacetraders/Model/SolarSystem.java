@@ -3,13 +3,13 @@ package com.example.owner.spacetraders.Model;
 import java.util.LinkedList;
 
 public class SolarSystem {
-    private String name;
-    private static LinkedList<SolarSystem> map = new LinkedList<>();
-    private int techLevel;
-    private int resourceLevel;
-    private Planet planet;
+    private final String name;
+    private static final LinkedList<SolarSystem> map = new LinkedList<>();
+    private final int techLevel;
+    private final int resourceLevel;
+    private final Planet planet;
 
-    public SolarSystem(Planet planet) {
+    private SolarSystem(Planet planet) {
         this.name = planet.getName();
         this.techLevel = planet.getTechLevel();
         this.resourceLevel = planet.getResourceLevel();

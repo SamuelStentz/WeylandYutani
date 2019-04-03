@@ -8,11 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.owner.spacetraders.Model.GameState;
-import com.example.owner.spacetraders.Model.Player;
-import com.example.owner.spacetraders.Model.Spaceship;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
-import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
 
 public class Game_Status extends AppCompatActivity {
 
@@ -40,21 +37,21 @@ public class Game_Status extends AppCompatActivity {
         inventoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onInventoryPressed(v);
+                onInventoryPressed();
             }
         });
 
         tradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onTradePressed(v);
+                onTradePressed();
             }
         });
 
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onTravelPressed(v);
+                onTravelPressed();
             }
         });
 
@@ -63,21 +60,21 @@ public class Game_Status extends AppCompatActivity {
         fuel.setText(String.format("%.2f", game.getPlayer().getShip().getCurrentFuel()));
     }
 
-    public void onInventoryPressed(View view) {
+    private void onInventoryPressed() {
 
         startActivity(new Intent(Game_Status.this, Inventory.class));
 
         finish();
     }
 
-    public void onTradePressed(View view) {
+    private void onTradePressed() {
 
         startActivity(new Intent(Game_Status.this, Market.class));
 
         finish();
     }
 
-    public void onTravelPressed(View view) {
+    private void onTravelPressed() {
 
         startActivity(new Intent(Game_Status.this, Travel.class));
 

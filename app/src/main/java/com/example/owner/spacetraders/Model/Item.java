@@ -17,7 +17,7 @@ public class Item {
 
     }
 
-    public Item (String n, ItemType type, int mtlp, int mtlu, int ttp, int ipl,
+    private Item(String n, ItemType type, int mtlp, int mtlu, int ttp, int ipl,
                  int basePrice, int var) {
         this.type = type;
         this.name = n;
@@ -54,8 +54,7 @@ public class Item {
     }
 
     public String toString() {
-        String s = String.format("%s of class %s",name, type.toString());
-        return s;
+        return String.format("%s of class %s",name, type.toString());
     }
 
     public static final List<Item> ITEM_LIST = generate();

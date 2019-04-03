@@ -1,7 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
 public class Spaceship {
-    private SpaceshipType type;
+    private final SpaceshipType type;
     private double currentFuel;
 
     public Spaceship() {
@@ -17,24 +17,24 @@ public class Spaceship {
         return currentFuel;
     }
 
-    public double getMaxFuel() {
+    private double getMaxFuel() {
         return type.getMaxFuel();
     }
 
-    public double refill(double f) {
-        if(f > this.getMaxFuel() - this.getCurrentFuel()) {
+    private double refill(double f) {
+        if(f > (this.getMaxFuel() - this.getCurrentFuel())) {
             return this.fullRefill();
         }
         currentFuel += f;
         return f;
     }
 
-    public double fullRefill() {
+    private double fullRefill() {
         return refill(this.getMaxFuel() - this.getCurrentFuel());
     }
 
     public boolean loseFuel(double f) {
-        if (currentFuel - f < 0) {
+        if ((currentFuel - f) < 0) {
             return false;
         }
         currentFuel -= f;
@@ -42,23 +42,23 @@ public class Spaceship {
     }
 
     enum SpaceshipType {
-        GNAT("gnat", 5, 100);
+        GNAT();
 
-        private String name;
-        private int capacity;
-        private double maxFuel;
+        private final String name;
+        private final int capacity;
+        private final double maxFuel;
 
-        SpaceshipType (String s, int c, double f) {
-            capacity = c;
-            name = s;
-            maxFuel = f;
+        SpaceshipType() {
+            capacity = 5;
+            name = "gnat";
+            maxFuel = (double) 100;
         }
 
-        public int getCapacity () {
+        int getCapacity() {
             return capacity;
         }
 
-        public double getMaxFuel() {
+        double getMaxFuel() {
             return maxFuel;
         }
 

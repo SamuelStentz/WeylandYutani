@@ -1,9 +1,9 @@
 package com.example.owner.spacetraders.Model;
 
 public class Trader {
-    private Planet planet;
-    private Inventory inventory;
-    private int credits;
+    private final Planet planet;
+    private final Inventory inventory;
+    private final int credits;
 
     public Trader (Planet planet) {
         this.planet = planet;

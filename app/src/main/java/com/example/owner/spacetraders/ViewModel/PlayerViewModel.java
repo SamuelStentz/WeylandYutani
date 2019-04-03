@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class PlayerViewModel extends AndroidViewModel {
 
-    private Model model;
+    private final Model model;
 
     public PlayerViewModel(@NonNull Application app) {
         super(app);

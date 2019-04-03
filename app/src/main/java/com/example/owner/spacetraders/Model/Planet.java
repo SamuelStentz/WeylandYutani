@@ -5,12 +5,12 @@ import java.util.Random;
 
 public class Planet {
     private String name;
-    private LinkedList<Planet> list = new LinkedList<>();
+    private final LinkedList<Planet> list = new LinkedList<>();
     private int techLevel;
     private int resourceLevel;
     private Trader trader;
 
-    public Planet(String name) {
+    private Planet(String name) {
         this.name = name;
         Random rand = new Random();
         techLevel = rand.nextInt(7);

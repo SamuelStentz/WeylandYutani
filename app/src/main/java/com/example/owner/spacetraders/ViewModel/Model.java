@@ -2,9 +2,9 @@ package com.example.owner.spacetraders.ViewModel;
 
 import com.example.owner.spacetraders.Model.GameState;
 
-public class Model {
-    private GameState game;
-    private static Model inst = new Model();
+public final class Model {
+    private final GameState game;
+    private static final Model inst = new Model();
 
     public static Model getInst() {
         return inst;

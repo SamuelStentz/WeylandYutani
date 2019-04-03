@@ -4,14 +4,11 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.owner.spacetraders.Model.GameState;
-import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
 
@@ -43,7 +40,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
         createPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onCreatePressed(v);
+                onCreatePressed();
             }
         });
 
@@ -55,12 +52,12 @@ public class PlayerCreationActivity extends AppCompatActivity {
         });
     }
 
-    public void onCreatePressed(View view) {
-        if (playerName.getText().toString().equals("")) {
+    private void onCreatePressed() {
+        if ("".equals(playerName.getText().toString())) {
             Toast.makeText(PlayerCreationActivity.this, "Must enter a name for your character.", Toast.LENGTH_LONG).show();
             return;
-        } else if (pilot.getText().toString().equals("") || fighter.getText().toString().equals("")
-                || trader.getText().toString().equals("") || engineer.getText().toString().equals("")) {
+        } else if ("".equals(pilot.getText().toString()) || "".equals(fighter.getText().toString())
+                || "".equals(trader.getText().toString()) || "".equals(engineer.getText().toString())) {
             Toast.makeText(PlayerCreationActivity.this, "All skill sections must be filled.", Toast.LENGTH_LONG).show();
             return;
         }
@@ -70,8 +67,8 @@ public class PlayerCreationActivity extends AppCompatActivity {
         int traderPoints = Integer.parseInt(trader.getText().toString());
         int engineerPoints = Integer.parseInt(engineer.getText().toString());
 
-        if(pilotPoints + fighterPoints + traderPoints + engineerPoints != 16
-            || pilotPoints < 0 || fighterPoints < 0 || traderPoints < 0 || engineerPoints < 0) {
+        if(((pilotPoints + fighterPoints + traderPoints + engineerPoints) != 16)
+                || (pilotPoints < 0) || (fighterPoints < 0) || (traderPoints < 0) || (engineerPoints < 0)) {
             Toast.makeText(PlayerCreationActivity.this, "You need to slot exactly 16 skill points. Negative skill points are not allowed.", Toast.LENGTH_LONG).show();
             return;
         }

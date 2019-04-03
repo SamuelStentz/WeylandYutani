@@ -7,10 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.owner.spacetraders.Model.GameState;
-import com.example.owner.spacetraders.Model.Item;
 import com.example.owner.spacetraders.Model.SolarSystem;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
@@ -18,10 +16,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import java.util.List;
 import java.util.Random;
 
 public class Travel extends AppCompatActivity {
@@ -59,7 +55,7 @@ public class Travel extends AppCompatActivity {
 
                     Random rand = new Random();
                     int rand1 = rand.nextInt(100);
-                    if (rand1 <= 50 && game.getPlayer().getCredits() >= 100) {
+                    if ((rand1 <= 50) && (game.getPlayer().getCredits() >= 100)) {
                         game.getPlayer().setCredits(game.getPlayer().getCredits() - 100);
                         Toast toast1 = Toast.makeText(Travel.this,
                                 "An asteroid has crashed into your ship, causing damage to your loading dock. "
@@ -71,18 +67,18 @@ public class Travel extends AppCompatActivity {
                     toast.setMargin(50,50);
                     toast.show();
                 }
-                onTravelReturnPressed(view);
+                onTravelReturnPressed();
             } });
 
         travelReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onTravelReturnPressed(v);
+                onTravelReturnPressed();
             }
         });
     }
 
-    public void onTravelReturnPressed(View view) {
+    private void onTravelReturnPressed() {
 
         startActivity(new Intent(Travel.this, Game_Status.class));
 

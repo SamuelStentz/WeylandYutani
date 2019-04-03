@@ -16,8 +16,6 @@ import com.example.owner.spacetraders.Model.TraderInventory;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
 
-import java.util.Random;
-
 public class Purchase extends AppCompatActivity {
 
     private GameState game;
@@ -155,20 +153,20 @@ public class Purchase extends AppCompatActivity {
         purchaseReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onPurchaseReturnPressed(v);
+                onPurchaseReturnPressed();
             }
         });
 
         purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onPurchasePressed(v);
+                onPurchasePressed();
             }
         });
 
     }
 
-    public void onPurchaseReturnPressed(View view) {
+    private void onPurchaseReturnPressed() {
 
         startActivity(new Intent(Purchase.this, Game_Status.class));
 
@@ -176,18 +174,18 @@ public class Purchase extends AppCompatActivity {
 
     }
 
-    public void onPurchasePressed(View view) {
+    private void onPurchasePressed() {
 
-        if (waterQ.getText().toString().equals("")
-                || foodQ.getText().toString().equals("")
-                || fursQ.getText().toString().equals("")
-                || oreQ.getText().toString().equals("")
-                || gamesQ.getText().toString().equals("")
-                || firearmsQ.getText().toString().equals("")
-                || medicineQ.getText().toString().equals("")
-                || machinesQ.getText().toString().equals("")
-                || narcoticsQ.getText().toString().equals("")
-                || robotsQ.getText().toString().equals("")) {
+        if ("".equals(waterQ.getText().toString())
+                || "".equals(foodQ.getText().toString())
+                || "".equals(fursQ.getText().toString())
+                || "".equals(oreQ.getText().toString())
+                || "".equals(gamesQ.getText().toString())
+                || "".equals(firearmsQ.getText().toString())
+                || "".equals(medicineQ.getText().toString())
+                || "".equals(machinesQ.getText().toString())
+                || "".equals(narcoticsQ.getText().toString())
+                || "".equals(robotsQ.getText().toString())) {
             Toast.makeText(Purchase.this, "MUST enter integers for each box under amount (enter 0 if not buying that item).", Toast.LENGTH_LONG).show();
             return;
         }
@@ -216,7 +214,7 @@ public class Purchase extends AppCompatActivity {
             totalA += iPA[i];
             totalP += iPA[i] * prices[i];
         }
-        if (totalA == 0 || !pI.validAdd(Item.ITEM_LIST.get(0), totalA)) {
+        if ((totalA == 0) || !pI.validAdd(Item.ITEM_LIST.get(0), totalA)) {
             Toast.makeText(Purchase.this, "Cannot purchase 0 items or purchase over capacity.", Toast.LENGTH_LONG).show();
             return;
         } else if (totalP > startCredits) {

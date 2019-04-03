@@ -10,9 +10,9 @@ import java.util.HashSet;
 import java.util.Random;
 
 public class Universe {
-    private Map<SolarSystem, int[]> map = new HashMap<>();
-    private Set<int[]> set = new HashSet<>();
-    private List<SolarSystem> list = SolarSystem.generateSolarySystem();
+    private final Map<SolarSystem, int[]> map = new HashMap<>();
+    private final Set<int[]> set = new HashSet<>();
+    private final List<SolarSystem> list = SolarSystem.generateSolarySystem();
 
     public Universe() {
         generateUniverse();

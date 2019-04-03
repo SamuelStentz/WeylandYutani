@@ -17,7 +17,7 @@ public enum ResourceLevel {
     private final String name;
     private final int value;
 
-    private ResourceLevel(String name, int value) {
+    ResourceLevel(String name, int value) {
         this.name = name;
         this.value = value;
     }

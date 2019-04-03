@@ -5,9 +5,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class TraderInventory implements Inventory {
-    private Trader trader;
-    private Map<Item, Integer> map;
-    private Map<Item, Integer> cost;
+    private final Trader trader;
+    private final Map<Item, Integer> map;
+    private final Map<Item, Integer> cost;
 
 
     public TraderInventory(Trader t) {
@@ -27,8 +27,8 @@ public class TraderInventory implements Inventory {
 
         for(Item i : map.keySet()){
             cost.put(i, i.getBasePrice()
-                    + i.getIPL() * (trader.getPlanet().getTechLevel()
-                    - i.getMTLP()) + (int) Math.random()*i.getVar());
+                    + (i.getIPL() * (trader.getPlanet().getTechLevel()
+                    - i.getMTLP())) + ((int) Math.random() * i.getVar()));
         }
 
     }
@@ -59,11 +59,7 @@ public class TraderInventory implements Inventory {
             return false;
         }
 
-        if(trader.getCredits() < getPrice(i) * k) {
-            return false;
-        }
-
-        return true;
+        return trader.getCredits() >= (getPrice(i) * k);
     }
 
     public boolean addItem(Item i, int k) {
@@ -72,7 +68,7 @@ public class TraderInventory implements Inventory {
             return false;
         }
 
-        if(trader.getCredits() < getPrice(i) * k) {
+        if(trader.getCredits() < (getPrice(i) * k)) {
             return false;
         }
 
@@ -90,10 +86,7 @@ public class TraderInventory implements Inventory {
             return false;
         }
         int temp = map.get(i);
-        if (temp < k) {
-            return false;
-        }
-        return true;
+        return temp >= k;
     }
 
 
