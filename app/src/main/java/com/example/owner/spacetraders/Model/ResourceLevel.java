@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 public enum ResourceLevel {
     NONE("NOSPECIALRESOURCES", 1),
     MINERALRICH("MINERALRICH", 2),
@@ -21,6 +23,7 @@ public enum ResourceLevel {
         this.name = name;
         this.value = value;
     }
+    @NonNull
     public String toString() {
         return name;
     }

@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         mViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
-        difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, Difficulty.values()));
+        difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.
+                layout.simple_spinner_item, Difficulty.values()));
 
         beginGame.setOnClickListener(new View.OnClickListener() {
             @Override

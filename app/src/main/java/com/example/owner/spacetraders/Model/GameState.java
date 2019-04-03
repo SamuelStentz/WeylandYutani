@@ -1,10 +1,14 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class GameState {
+    @Nullable
     private Player player;
     private Difficulty diff;
     private Universe univ;
@@ -32,6 +36,7 @@ public class GameState {
         return univ.getStar();
     }
 
+    @NonNull
     public String toString() {
         return String.format("Game with %s", player.toString());
     }

@@ -1,11 +1,13 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 import java.util.List;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Random;
@@ -36,14 +38,16 @@ public class Universe {
         return Collections.unmodifiableMap(map);
     }
 
+    @NonNull
     public String toString() {
-        String half = "";
+        StringBuilder half = new StringBuilder();
         Set<SolarSystem> keySet = map.keySet();
         Iterator<SolarSystem> iterator = keySet.iterator();
         while (iterator.hasNext()) {
             SolarSystem s = iterator.next();
             int[] coordinate = map.get(s);
-            half = half + s.toString() + " | location: (" + coordinate[0] + ", " + coordinate[1] + ").\n";
+            half.append(s.toString()).append(" | location: (").append(coordinate[0])
+                    .append(", ").append(coordinate[1]).append(").\n");
         }
         return "Universe: \n" + half;
     }
@@ -51,7 +55,7 @@ public class Universe {
     public double distanceBetween(SolarSystem a, SolarSystem b) {
         int[] aCoordinates = map.get(a);
         int[] bCoordinates = map.get(b);
-        double xdiff = aCoordinates[0] - bCoordinates[0];
+        double xdiff = Objects.requireNonNull(aCoordinates)[0] - Objects.requireNonNull(bCoordinates)[0];
         double ydiff = aCoordinates[1] - bCoordinates[1];
         return Math.sqrt(Math.pow(xdiff, 2) + Math.pow(ydiff, 2));
     }

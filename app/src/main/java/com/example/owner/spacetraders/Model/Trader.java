@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 public class Trader {
     private final Planet planet;
     private final Inventory inventory;
@@ -23,6 +25,7 @@ public class Trader {
         return inventory;
     }
 
+    @NonNull
     public String toString () {
         return String.format("Trader of %s, \n%s",planet.getName(), inventory.toString());
     }

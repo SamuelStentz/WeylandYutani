@@ -1,5 +1,9 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
+@SuppressWarnings("ALL")
 public class Player {
 
     private int pilotSkill;
@@ -7,6 +11,7 @@ public class Player {
     private int traderSkill;
     private int engineerSkill;
     private int credits;
+    @Nullable
     private String name;
     private Spaceship ship;
     private Inventory inventory;
@@ -96,9 +101,12 @@ public class Player {
     }
 
 
+    @NonNull
     public String toString() {
-        return String.format("Player: %s, pilot points: %s, fighter points: %s, trader points: %s, engineer points: %s, credits: %s\n%s",
-                getName(), getPilotSkill(), getFighterSkill(), getTraderSkill(), getEngineerSkill(), this.getCredits(),this.inventory.toString());
+        return String.format("Player: %s, pilot points: %s, fighter points: "
+                        + "%s, trader points: %s, engineer points: %s, credits: %s\n%s",
+                getName(), getPilotSkill(), getFighterSkill(), getTraderSkill(),
+                getEngineerSkill(), this.getCredits(),this.inventory.toString());
     }
 
 }

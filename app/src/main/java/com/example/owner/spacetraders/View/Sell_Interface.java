@@ -89,7 +89,7 @@ public class Sell_Interface extends AppCompatActivity {
         maximumCapacity = findViewById(R.id.maximum_capacity_sell_text);
         credits = findViewById(R.id.credits_sell_text);
 
-        pI= (PlayerInventory) game.getPlayer().getInventory();
+        pI= game.getPlayer().getInventory();
         currentCapacity.setText(String.format("%d", pI.getCapacity()));
         maximumCapacity.setText(String.format("%d", game.getPlayer().getShip().getCapacity()));
 
@@ -174,7 +174,9 @@ public class Sell_Interface extends AppCompatActivity {
                 || "".equals(machinesQ.getText().toString())
                 || "".equals(narcoticsQ.getText().toString())
                 || "".equals(robotsQ.getText().toString())) {
-            Toast.makeText(Sell_Interface.this, "MUST enter integers for each box under amount (enter 0 if not selling that item).", Toast.LENGTH_LONG).show();
+            Toast.makeText(Sell_Interface.this, "MUST enter"
+                    + " integers for each box under amount (enter 0 if not selling that item).",
+                    Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -191,7 +193,8 @@ public class Sell_Interface extends AppCompatActivity {
 
         for (int i = 0; i < iSA.length; i++) {
             if (!pI.validRemove(Item.ITEM_LIST.get(i + 1), iSA[i])) {
-                Toast.makeText(Sell_Interface.this, "Cannot sell more items than what you own.", Toast.LENGTH_LONG).show();
+                Toast.makeText(Sell_Interface.this, "Cannot sell more items "
+                        + "than what you own.", Toast.LENGTH_LONG).show();
                 return;
             }
         }

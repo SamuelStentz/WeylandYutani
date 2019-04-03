@@ -1,4 +1,6 @@
 package com.example.owner.spacetraders.Model;
+import android.support.annotation.NonNull;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -76,15 +78,16 @@ public class PlayerInventory implements Inventory {
         return temp >= k;
     }
 
+    @NonNull
     public String toString () {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (Item i : getItems()) {
             String itemName = i.toString();
             int num = getQuantity(i);
             int val = getPrice(i);
             String t = String.format("\t %s: Quantity: %d \tCost: %d\n", itemName, num, val);
-            s = s + "\t" + t;
+            s.append("\t").append(t);
         }
-        return s;
+        return s.toString();
     }
 }

@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 public class Spaceship {
     private final SpaceshipType type;
     private double currentFuel;
@@ -61,6 +63,7 @@ public class Spaceship {
             return maxFuel;
         }
 
+        @NonNull
         public String toString () {
             return name;
         }

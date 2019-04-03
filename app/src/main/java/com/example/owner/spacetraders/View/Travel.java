@@ -38,7 +38,7 @@ public class Travel extends AppCompatActivity {
 
         ArrayAdapter adapter = new ArrayAdapter<SolarSystem>(this, R.layout.list_view, ss);
 
-        final ListView listView = (ListView) findViewById(R.id.solar_system_list);
+        final ListView listView = findViewById(R.id.solar_system_list);
         listView.setAdapter(adapter);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         final SolarSystem[] finalSs = ss;
@@ -48,7 +48,8 @@ public class Travel extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     final int position, long id) {
                 try {
-                    Toast toast=Toast.makeText(getApplicationContext(),finalSs[position].toString(),Toast.LENGTH_LONG);
+                    Toast toast=Toast.makeText(getApplicationContext(),finalSs[position]
+                            .toString(),Toast.LENGTH_LONG);
                     toast.setMargin(50,50);
                     toast.show();
                     game.traverse(position);
@@ -58,12 +59,15 @@ public class Travel extends AppCompatActivity {
                     if ((rand1 <= 50) && (game.getPlayer().getCredits() >= 100)) {
                         game.getPlayer().setCredits(game.getPlayer().getCredits() - 100);
                         Toast toast1 = Toast.makeText(Travel.this,
-                                "An asteroid has crashed into your ship, causing damage to your loading dock. "
-                                       + "100 credits are needed to repair your ship.", Toast.LENGTH_LONG);
+                                "An asteroid has crashed into your ship, causing damage "
+                                        + "to your loading dock. "
+                                       + "100 credits are needed to repair your ship.",
+                                Toast.LENGTH_LONG);
                         toast1.show();
                     }
                 } catch (IllegalArgumentException a) {
-                    Toast toast=Toast.makeText(getApplicationContext(),a.toString(),Toast.LENGTH_LONG);
+                    Toast toast=Toast.makeText(getApplicationContext(),a.toString(),
+                            Toast.LENGTH_LONG);
                     toast.setMargin(50,50);
                     toast.show();
                 }

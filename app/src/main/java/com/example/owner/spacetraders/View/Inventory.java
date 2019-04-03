@@ -51,19 +51,31 @@ public class Inventory extends AppCompatActivity {
         narcotics = findViewById(R.id.inventory_narcotics_quantity);
         robots = findViewById(R.id.inventory_robots_quantity);
 
-        cC.setText(String.format("%d", game.getPlayer().getInventory().getCapacity()));
-        mC.setText(String.format("%d", game.getPlayer().getShip().getCapacity()));
+        cC.setText(String.format("%d", game.getPlayer()
+                .getInventory().getCapacity()));
+        mC.setText(String.format("%d", game.getPlayer()
+                .getShip().getCapacity()));
 
-        water.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(1))));
-        furs.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(3))));
-        food.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(2))));
-        ore.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(4))));
-        games.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(5))));
-        firearms.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(6))));
-        medicine.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(7))));
-        machines.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(8))));
-        narcotics.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(9))));
-        robots.setText(String.format("%d", game.getPlayer().getInventory().getQuantity(Item.ITEM_LIST.get(10))));
+        water.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(1))));
+        furs.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(3))));
+        food.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(2))));
+        ore.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(4))));
+        games.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(5))));
+        firearms.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(6))));
+        medicine.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(7))));
+        machines.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(8))));
+        narcotics.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(9))));
+        robots.setText(String.format("%d", game.getPlayer()
+                .getInventory().getQuantity(Item.ITEM_LIST.get(10))));
 
         Button inventoryReturn = findViewById(R.id.inventory_return_button);
 

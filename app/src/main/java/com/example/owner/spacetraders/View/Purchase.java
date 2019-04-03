@@ -74,7 +74,7 @@ public class Purchase extends AppCompatActivity {
         maximumCapacity = findViewById(R.id.maximum_capacity_buy_text);
         credits = findViewById(R.id.credits_buy_text);
 
-        pI = (PlayerInventory) game.getPlayer().getInventory();
+        pI = game.getPlayer().getInventory();
         tI = (TraderInventory) game.getPosition().getTrader().getInventory();
         currentCapacity.setText(String.format("%d", pI.getCapacity()));
         maximumCapacity.setText(String.format("%d", game.getPlayer().getShip().getCapacity()));
@@ -186,7 +186,9 @@ public class Purchase extends AppCompatActivity {
                 || "".equals(machinesQ.getText().toString())
                 || "".equals(narcoticsQ.getText().toString())
                 || "".equals(robotsQ.getText().toString())) {
-            Toast.makeText(Purchase.this, "MUST enter integers for each box under amount (enter 0 if not buying that item).", Toast.LENGTH_LONG).show();
+            Toast.makeText(Purchase.this, "MUST enter integers"
+                    + " for each box under amount (enter 0 if not buying that item).",
+                    Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -205,20 +207,24 @@ public class Purchase extends AppCompatActivity {
         int totalP = 0;
         for (int i = 0; i < iPA.length; i++) {
             if (iPA[i] < 0) {
-                Toast.makeText(Purchase.this, "Cannot buy negative items.", Toast.LENGTH_LONG).show();
+                Toast.makeText(Purchase.this, "Cannot buy negative items.",
+                        Toast.LENGTH_LONG).show();
                 return;
             } else if (iPA[i] > stocks[i]) {
-                Toast.makeText(Purchase.this, "Cannot buy more items than what the marketplace provides.", Toast.LENGTH_LONG).show();
+                Toast.makeText(Purchase.this, "Cannot buy more items than "
+                        + "what the marketplace provides.", Toast.LENGTH_LONG).show();
                 return;
             }
             totalA += iPA[i];
             totalP += iPA[i] * prices[i];
         }
         if ((totalA == 0) || !pI.validAdd(Item.ITEM_LIST.get(0), totalA)) {
-            Toast.makeText(Purchase.this, "Cannot purchase 0 items or purchase over capacity.", Toast.LENGTH_LONG).show();
+            Toast.makeText(Purchase.this, "Cannot purchase 0 items or "
+                    + "purchase over capacity.", Toast.LENGTH_LONG).show();
             return;
         } else if (totalP > startCredits) {
-            Toast.makeText(Purchase.this, "You do not have enough credits to purchase these items.", Toast.LENGTH_LONG).show();
+            Toast.makeText(Purchase.this, "You do not have enough credits"
+                    + " to purchase these items.", Toast.LENGTH_LONG).show();
             return;
         }
         for(int j = 0; j < iPA.length; j++) {

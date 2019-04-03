@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,6 +55,7 @@ public class Item {
         return var;
     }
 
+    @NonNull
     public String toString() {
         return String.format("%s of class %s",name, type.toString());
     }

@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +41,7 @@ public class SolarSystem {
         return Collections.unmodifiableList(map);
     }
 
+    @NonNull
     public String toString() {
         return String.format("Solar System: %s | tech level: %s\n",
                 this.name, TechLevel.values()[techLevel], ResourceLevel.values()[resourceLevel]);

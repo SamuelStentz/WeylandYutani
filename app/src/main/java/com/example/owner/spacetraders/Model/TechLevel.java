@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 public enum TechLevel {
     PREAG("Pre-Agriculture", 0),
     AGRICULTURE("Agriculture", 1),
@@ -20,6 +22,7 @@ public enum TechLevel {
     public int getTechLevel() {
         return value;
     }
+    @NonNull
     public String toString() {
         return name;
     }

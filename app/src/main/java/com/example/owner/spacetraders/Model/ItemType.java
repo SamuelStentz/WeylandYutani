@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 public enum ItemType {
     WATER("water"),
     FURS("furs"),
@@ -18,6 +20,7 @@ public enum ItemType {
     ItemType (String name) {
         this.name = name;
     }
+    @NonNull
     public String toString() {
         return name;
     }

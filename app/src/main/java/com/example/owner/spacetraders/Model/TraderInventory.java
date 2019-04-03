@@ -1,5 +1,7 @@
 package com.example.owner.spacetraders.Model;
 
+import android.support.annotation.NonNull;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -28,7 +30,7 @@ public class TraderInventory implements Inventory {
         for(Item i : map.keySet()){
             cost.put(i, i.getBasePrice()
                     + (i.getIPL() * (trader.getPlanet().getTechLevel()
-                    - i.getMTLP())) + ((int) Math.random() * i.getVar()));
+                    - i.getMTLP())) + ((int) (Math.random() * i.getVar())));
         }
 
     }
@@ -110,15 +112,16 @@ public class TraderInventory implements Inventory {
         return true;
     }
 
+    @NonNull
     public String toString() {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (Item i : getItems()) {
             String itemName = i.toString();
             int num = getQuantity(i);
             int val = getPrice(i);
             String t = String.format("\t %s: Quantity: %d \tCost: %d\n", itemName, num, val);
-            s = s + "\t" + t;
+            s.append("\t").append(t);
         }
-        return s;
+        return s.toString();
     }
 }
