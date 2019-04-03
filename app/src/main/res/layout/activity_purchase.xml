@@ -66,7 +66,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -75,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/current_capacity_sell_text"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <TextView
         android:id="@+id/current_capacity_buy_text"
@@ -167,8 +166,8 @@
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="395dp"
-        android:layout_height="463dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/buy_return_button"
         tools:layout_editor_absoluteX="8dp">

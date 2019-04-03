@@ -16,6 +16,8 @@ import com.example.owner.spacetraders.Model.TraderInventory;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
 
+import java.util.Random;
+
 public class Purchase extends AppCompatActivity {
 
     private GameState game;
@@ -168,7 +170,7 @@ public class Purchase extends AppCompatActivity {
 
     private void onPurchaseReturnPressed() {
 
-        startActivity(new Intent(Purchase.this, Game_Status.class));
+        startActivity(new Intent(Purchase.this, Market.class));
 
         finish();
 
@@ -232,6 +234,15 @@ public class Purchase extends AppCompatActivity {
             startCredits -= iPA[j] * prices[j];
             stocks[j] = stocks[j] - iPA[j];
             tI.removeItem(Item.ITEM_LIST.get(j + 1), iPA[j]);
+        }
+
+        Random rand = new Random();
+        int rand1 = rand.nextInt(100);
+        int rand2 = rand.nextInt(9);
+        if (rand1 >= 50) {
+            pI.addItem(Item.ITEM_LIST.get(rand2), 1);
+            Toast.makeText(Purchase.this, "Wow, how lucky! "
+                   + "You receive (an) extra " + Item.ITEM_LIST.get(rand2) + " from the trader.", Toast.LENGTH_LONG).show();
         }
 
         game.getPlayer().setCredits(startCredits);

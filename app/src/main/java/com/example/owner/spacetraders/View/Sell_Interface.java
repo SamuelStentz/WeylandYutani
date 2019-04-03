@@ -236,7 +236,7 @@ public class Sell_Interface extends AppCompatActivity {
 
     private void onSellReturnPressed() {
 
-        startActivity(new Intent(Sell_Interface.this, Game_Status.class));
+        startActivity(new Intent(Sell_Interface.this, Market.class));
 
         finish();
 

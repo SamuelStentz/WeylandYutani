@@ -15,8 +15,8 @@
         android:layout_marginEnd="8dp"
         android:text="Current Capacity"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Credits"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -63,7 +63,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -72,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/current_capacity_sell_text"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <TextView
         android:id="@+id/current_capacity_sell_text"
@@ -96,8 +95,8 @@
         android:layout_marginEnd="8dp"
         android:text="Maximum Capacity"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
@@ -164,8 +163,8 @@
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="395dp"
-        android:layout_height="463dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/sell_return_button"
         tools:layout_editor_absoluteX="8dp">
