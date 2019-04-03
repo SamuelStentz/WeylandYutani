@@ -22,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Random;
 
 public class Travel extends AppCompatActivity {
 
@@ -55,6 +56,16 @@ public class Travel extends AppCompatActivity {
                     toast.setMargin(50,50);
                     toast.show();
                     game.traverse(position);
+
+                    Random rand = new Random();
+                    int rand1 = rand.nextInt(100);
+                    if (rand1 <= 50 && game.getPlayer().getCredits() >= 100) {
+                        game.getPlayer().setCredits(game.getPlayer().getCredits() - 100);
+                        Toast toast1 = Toast.makeText(Travel.this,
+                                "An asteroid has crashed into your ship, causing damage to your loading dock. "
+                                       + "100 credits are needed to repair your ship.", Toast.LENGTH_LONG);
+                        toast1.show();
+                    }
                 } catch (IllegalArgumentException a) {
                     Toast toast=Toast.makeText(getApplicationContext(),a.toString(),Toast.LENGTH_LONG);
                     toast.setMargin(50,50);

@@ -81,6 +81,8 @@ public class Game_Status extends AppCompatActivity {
 
         startActivity(new Intent(Game_Status.this, Travel.class));
 
+
+
         finish();
     }
 }
