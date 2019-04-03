@@ -1,6 +1,8 @@
 package com.example.owner.spacetraders.Model;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class Planet {
@@ -35,8 +37,8 @@ public class Planet {
         list.add(new Planet("Utopia"));
     }
 
-    public LinkedList<Planet> getPlanet() {
-        return list;
+    public List<Planet> getPlanet() {
+        return Collections.unmodifiableList(list);
     }
     public String getName() {
         return this.name;

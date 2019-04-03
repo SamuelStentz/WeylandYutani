@@ -33,10 +33,12 @@ public class TraderInventory implements Inventory {
 
     }
 
+    @Override
     public Set<Item> getItems() {
         return map.keySet();
     }
 
+    @Override
     public int getPrice(Item i) {
         if (cost.containsKey(i)) {
             return cost.get(i);
@@ -45,6 +47,7 @@ public class TraderInventory implements Inventory {
         }
     }
 
+    @Override
     public int getQuantity(Item i) {
         if (map.containsKey(i)) {
             return map.get(i);
@@ -53,6 +56,7 @@ public class TraderInventory implements Inventory {
         }
     }
 
+    @Override
     public boolean validAdd (Item i, int k) {
 
         if (trader.getPlanet().getTechLevel() < i.getMTLU()) {
@@ -62,6 +66,7 @@ public class TraderInventory implements Inventory {
         return trader.getCredits() >= (getPrice(i) * k);
     }
 
+    @Override
     public boolean addItem(Item i, int k) {
 
         if (trader.getPlanet().getTechLevel() < i.getMTLU()) {
@@ -81,6 +86,7 @@ public class TraderInventory implements Inventory {
         return true;
     }
 
+    @Override
     public boolean validRemove(Item i, int k) {
         if (!map.containsKey(i)) {
             return false;
@@ -90,6 +96,7 @@ public class TraderInventory implements Inventory {
     }
 
 
+    @Override
     public boolean removeItem(Item i, int k) {
         if (!map.containsKey(i)) {
             return false;

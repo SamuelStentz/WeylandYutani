@@ -2,16 +2,10 @@ package com.example.owner.spacetraders.ViewModel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.ViewModel;
-import android.graphics.ColorSpace;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.owner.spacetraders.Model.Difficulty;
 import com.example.owner.spacetraders.Model.GameState;
-import com.example.owner.spacetraders.Model.Item;
-import com.example.owner.spacetraders.Model.ItemType;
-import com.example.owner.spacetraders.Model.Planet;
 import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.Model.SolarSystem;
 import com.example.owner.spacetraders.Model.Universe;

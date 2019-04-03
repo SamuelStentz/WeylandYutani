@@ -1,6 +1,8 @@
 package com.example.owner.spacetraders.Model;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class SolarSystem {
     private final String name;
@@ -28,13 +30,13 @@ public class SolarSystem {
         return planet;
     }
 
-    public static LinkedList<SolarSystem> generateSolarySystem() {
+    public static List<SolarSystem> generateSolarySystem() {
         Planet pl = new Planet();
-        LinkedList<Planet> planetList = pl.getPlanet();
+        List<Planet> planetList = pl.getPlanet();
         for (int i = 0; i < planetList.size(); i++) {
             map.add(new SolarSystem(planetList.get(i)));
         }
-        return map;
+        return Collections.unmodifiableList(map);
     }
 
     public String toString() {

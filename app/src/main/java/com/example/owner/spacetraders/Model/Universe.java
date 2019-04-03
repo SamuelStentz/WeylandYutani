@@ -1,5 +1,6 @@
 package com.example.owner.spacetraders.Model;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -32,7 +33,7 @@ public class Universe {
     }
 
     public Map<SolarSystem, int[]> getStar() {
-        return map;
+        return Collections.unmodifiableMap(map);
     }
 
     public String toString() {
@@ -44,7 +45,7 @@ public class Universe {
             int[] coordinate = map.get(s);
             half = half + s.toString() + " | location: (" + coordinate[0] + ", " + coordinate[1] + ").\n";
         }
-        return String.format("Universe: \n" + half);
+        return "Universe: \n" + half;
     }
 
     public double distanceBetween(SolarSystem a, SolarSystem b) {
@@ -56,6 +57,6 @@ public class Universe {
     }
 
     public List<SolarSystem> getList() {
-        return list;
+        return Collections.unmodifiableList(list);
     }
 }

@@ -33,12 +33,11 @@ public class Spaceship {
         return refill(this.getMaxFuel() - this.getCurrentFuel());
     }
 
-    public boolean loseFuel(double f) {
+    public void loseFuel(double f) {
         if ((currentFuel - f) < 0) {
-            return false;
+            return;
         }
         currentFuel -= f;
-        return true;
     }
 
     enum SpaceshipType {

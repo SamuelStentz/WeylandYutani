@@ -15,6 +15,7 @@ public class PlayerInventory implements Inventory {
         capacity = 0;
     }
 
+    @Override
     public Set<Item> getItems() {
         return map.keySet();
     }
