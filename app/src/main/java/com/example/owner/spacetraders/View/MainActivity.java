@@ -15,19 +15,15 @@ import com.example.owner.spacetraders.Model.Difficulty;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner difficultySpinner;
-
-    private PlayerViewModel mViewModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        difficultySpinner = findViewById(R.id.difficultySpinner);
+        Spinner difficultySpinner = findViewById(R.id.difficultySpinner);
         Button beginGame = findViewById(R.id.beginGameButton);
 
-        mViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        PlayerViewModel mViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
         difficultySpinner.setAdapter(new ArrayAdapter(this, android.R.
                 layout.simple_spinner_item, Difficulty.values()));

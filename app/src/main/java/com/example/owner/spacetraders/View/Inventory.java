@@ -14,42 +14,26 @@ import com.example.owner.spacetraders.ViewModel.Model;
 
 public class Inventory extends AppCompatActivity {
 
-    private GameState game;
-
-    private TextView cC;
-    private TextView mC;
-
-    private TextView water;
-    private TextView furs;
-    private TextView food;
-    private TextView ore;
-    private TextView games;
-    private TextView firearms;
-    private TextView medicine;
-    private TextView machines;
-    private TextView narcotics;
-    private TextView robots;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.owner.spacetraders.R.layout.activity_inventory);
 
-        game = Model.getInst().getGame();
+        GameState game = Model.getInst().getGame();
 
-        cC = findViewById(R.id.current_capacity_text);
-        mC = findViewById(R.id.maximum_capacity_text);
+        TextView cC = findViewById(R.id.current_capacity_text);
+        TextView mC = findViewById(R.id.maximum_capacity_text);
 
-        water = findViewById(R.id.inventory_water_quantity);
-        furs = findViewById(R.id.inventory_furs_quantity);
-        food = findViewById(R.id.inventory_food_quantity);
-        ore = findViewById(R.id.inventory_ore_quantity);
-        games = findViewById(R.id.inventory_games_quantity);
-        firearms = findViewById(R.id.inventory_firearms_quantity);
-        medicine = findViewById(R.id.inventory_medicine_quantity);
-        machines = findViewById(R.id.inventory_machines_quantity);
-        narcotics = findViewById(R.id.inventory_narcotics_quantity);
-        robots = findViewById(R.id.inventory_robots_quantity);
+        TextView water = findViewById(R.id.inventory_water_quantity);
+        TextView furs = findViewById(R.id.inventory_furs_quantity);
+        TextView food = findViewById(R.id.inventory_food_quantity);
+        TextView ore = findViewById(R.id.inventory_ore_quantity);
+        TextView games = findViewById(R.id.inventory_games_quantity);
+        TextView firearms = findViewById(R.id.inventory_firearms_quantity);
+        TextView medicine = findViewById(R.id.inventory_medicine_quantity);
+        TextView machines = findViewById(R.id.inventory_machines_quantity);
+        TextView narcotics = findViewById(R.id.inventory_narcotics_quantity);
+        TextView robots = findViewById(R.id.inventory_robots_quantity);
 
         cC.setText(String.format("%d", game.getPlayer()
                 .getInventory().getCapacity()));

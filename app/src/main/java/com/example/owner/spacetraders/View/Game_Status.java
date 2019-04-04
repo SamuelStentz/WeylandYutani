@@ -13,22 +13,16 @@ import com.example.owner.spacetraders.ViewModel.Model;
 
 public class Game_Status extends AppCompatActivity {
 
-    private TextView credits;
-    private TextView location;
-    private TextView fuel;
-
-    private GameState game;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.owner.spacetraders.R.layout.activity_game__status);
 
-        game = Model.getInst().getGame();
+        GameState game = Model.getInst().getGame();
 
-        credits = findViewById(R.id.credits_text);
-        location = findViewById(R.id.planet_location_text);
-        fuel = findViewById(R.id.fuel_text);
+        TextView credits = findViewById(R.id.credits_text);
+        TextView location = findViewById(R.id.planet_location_text);
+        TextView fuel = findViewById(R.id.fuel_text);
 
         Button inventoryButton = findViewById(R.id.inventory_button);
         Button tradeButton = findViewById(R.id.trade_info);

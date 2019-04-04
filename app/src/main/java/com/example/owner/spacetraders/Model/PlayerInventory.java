@@ -21,6 +21,7 @@ public class PlayerInventory implements Inventory {
     public Set<Item> getItems() {
         return map.keySet();
     }
+    @Override
     public int getPrice(Item i) {
         return i.getBasePrice();
     }
@@ -28,6 +29,7 @@ public class PlayerInventory implements Inventory {
         return capacity;
     }
 
+    @Override
     public int getQuantity(Item i) {
         if (map.containsKey(i)) {
             return map.get(i);
@@ -36,6 +38,7 @@ public class PlayerInventory implements Inventory {
         }
     }
 
+    @Override
     public boolean addItem(Item i, int k) {
         if (player.getShip().getCapacity() < (capacity + k)) {
             return false;
@@ -50,11 +53,13 @@ public class PlayerInventory implements Inventory {
         return true;
     }
 
+    @Override
     public boolean validAdd(Item i, int k) {
         return player.getShip().getCapacity() >= (capacity + k);
     }
 
 
+    @Override
     public boolean removeItem(Item i, int k) {
         if (!map.containsKey(i)) {
             return false;
@@ -69,6 +74,7 @@ public class PlayerInventory implements Inventory {
         return true;
     }
 
+    @Override
     public boolean validRemove(Item i, int k) {
         if (!map.containsKey(i)) {
             return false;

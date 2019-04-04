@@ -20,7 +20,6 @@ public class Sell_Interface extends AppCompatActivity {
     private GameState game;
 
     private TextView currentCapacity;
-    private TextView maximumCapacity;
     private TextView credits;
 
     private EditText waterQ;
@@ -33,17 +32,6 @@ public class Sell_Interface extends AppCompatActivity {
     private EditText machinesQ;
     private EditText narcoticsQ;
     private EditText robotsQ;
-
-    private TextView water;
-    private TextView furs;
-    private TextView food;
-    private TextView ore;
-    private TextView games;
-    private TextView firearms;
-    private TextView medicine;
-    private TextView machines;
-    private TextView narcotics;
-    private TextView robots;
 
     private TextView waterS;
     private TextView fursS;
@@ -86,7 +74,7 @@ public class Sell_Interface extends AppCompatActivity {
         });
 
         currentCapacity = findViewById(R.id.current_capacity_sell_text);
-        maximumCapacity = findViewById(R.id.maximum_capacity_sell_text);
+        TextView maximumCapacity = findViewById(R.id.maximum_capacity_sell_text);
         credits = findViewById(R.id.credits_sell_text);
 
         pI= game.getPlayer().getInventory();
@@ -96,16 +84,16 @@ public class Sell_Interface extends AppCompatActivity {
         startCredits = game.getPlayer().getCredits();
         credits.setText(String.format("%d", startCredits));
 
-        water = findViewById(R.id.sell_water_price);
-        furs = findViewById(R.id.sell_furs_price);
-        food = findViewById(R.id.sell_food_price);
-        ore = findViewById(R.id.sell_ore_price);
-        games = findViewById(R.id.sell_games_price);
-        firearms = findViewById(R.id.sell_firearms_price);
-        medicine = findViewById(R.id.sell_medicine_price);
-        machines = findViewById(R.id.sell_machines_price);
-        narcotics = findViewById(R.id.sell_narcotics_price);
-        robots = findViewById(R.id.sell_robots_price);
+        TextView water = findViewById(R.id.sell_water_price);
+        TextView furs = findViewById(R.id.sell_furs_price);
+        TextView food = findViewById(R.id.sell_food_price);
+        TextView ore = findViewById(R.id.sell_ore_price);
+        TextView games = findViewById(R.id.sell_games_price);
+        TextView firearms = findViewById(R.id.sell_firearms_price);
+        TextView medicine = findViewById(R.id.sell_medicine_price);
+        TextView machines = findViewById(R.id.sell_machines_price);
+        TextView narcotics = findViewById(R.id.sell_narcotics_price);
+        TextView robots = findViewById(R.id.sell_robots_price);
 
         prices = new int[10];
         for(int i = 0; i < prices.length; i++) {

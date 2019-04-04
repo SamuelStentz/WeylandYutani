@@ -13,22 +13,16 @@ import com.example.owner.spacetraders.ViewModel.Model;
 
 public class Market extends AppCompatActivity {
 
-    private GameState game;
-
-    private TextView techLevel;
-    private TextView tradeSkill;
-    private TextView credits;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
 
-        game = Model.getInst().getGame();
+        GameState game = Model.getInst().getGame();
 
-        techLevel = findViewById(R.id.market_tech_text);
-        tradeSkill = findViewById(R.id.market_trade_skill_text);
-        credits = findViewById(R.id.market_credit_text2);
+        TextView techLevel = findViewById(R.id.market_tech_text);
+        TextView tradeSkill = findViewById(R.id.market_trade_skill_text);
+        TextView credits = findViewById(R.id.market_credit_text2);
 
         techLevel.setText(String.format("%d", game.getPosition().getTechLevel()));
         tradeSkill.setText(String.format("%d", game.getPlayer().getTraderSkill()));

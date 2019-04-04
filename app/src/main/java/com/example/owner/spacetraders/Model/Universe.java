@@ -2,6 +2,7 @@ package com.example.owner.spacetraders.Model;
 
 import android.support.annotation.NonNull;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +15,7 @@ import java.util.Random;
 
 public class Universe {
     private final Map<SolarSystem, int[]> map = new HashMap<>();
-    private final Set<int[]> set = new HashSet<>();
+    private final Collection<int[]> set = new HashSet<>();
     private final List<SolarSystem> list = SolarSystem.generateSolarySystem();
 
     public Universe() {
@@ -55,7 +56,8 @@ public class Universe {
     public double distanceBetween(SolarSystem a, SolarSystem b) {
         int[] aCoordinates = map.get(a);
         int[] bCoordinates = map.get(b);
-        double xdiff = Objects.requireNonNull(aCoordinates)[0] - Objects.requireNonNull(bCoordinates)[0];
+        double xdiff = Objects.requireNonNull(aCoordinates)[0]
+                - Objects.requireNonNull(bCoordinates)[0];
         double ydiff = aCoordinates[1] - bCoordinates[1];
         return Math.sqrt(Math.pow(xdiff, 2) + Math.pow(ydiff, 2));
     }

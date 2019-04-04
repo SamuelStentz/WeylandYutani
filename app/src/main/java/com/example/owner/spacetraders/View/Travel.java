@@ -13,6 +13,7 @@ import com.example.owner.spacetraders.Model.SolarSystem;
 import com.example.owner.spacetraders.R;
 import com.example.owner.spacetraders.ViewModel.Model;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
@@ -36,7 +37,7 @@ public class Travel extends AppCompatActivity {
 
         Button travelReturn = findViewById(R.id.travel_return_button);
 
-        ArrayAdapter adapter = new ArrayAdapter<SolarSystem>(this, R.layout.list_view, ss);
+        ListAdapter adapter = new ArrayAdapter<SolarSystem>(this, R.layout.list_view, ss);
 
         final ListView listView = findViewById(R.id.solar_system_list);
         listView.setAdapter(adapter);
@@ -66,7 +67,7 @@ public class Travel extends AppCompatActivity {
                         toast1.show();
                     }
                 } catch (IllegalArgumentException a) {
-                    Toast toast=Toast.makeText(getApplicationContext(),a.toString(),
+                    Toast toast=Toast.makeText(getApplicationContext(),a.getMessage(),
                             Toast.LENGTH_LONG);
                     toast.setMargin(50,50);
                     toast.show();

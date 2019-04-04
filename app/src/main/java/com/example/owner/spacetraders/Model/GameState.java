@@ -17,7 +17,6 @@ public class GameState {
     public GameState() {
         player = null;
         diff = Difficulty.EASY;
-        univ = null;
     }
 
     public void setPlayer(Player player) {

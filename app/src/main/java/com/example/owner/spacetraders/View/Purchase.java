@@ -23,19 +23,7 @@ public class Purchase extends AppCompatActivity {
     private GameState game;
 
     private TextView currentCapacity;
-    private TextView maximumCapacity;
     private TextView credits;
-
-    private TextView water;
-    private TextView furs;
-    private TextView food;
-    private TextView ore;
-    private TextView games;
-    private TextView firearms;
-    private TextView medicine;
-    private TextView machines;
-    private TextView narcotics;
-    private TextView robots;
 
     private TextView waterS;
     private TextView fursS;
@@ -73,7 +61,7 @@ public class Purchase extends AppCompatActivity {
         game = Model.getInst().getGame();
 
         currentCapacity = findViewById(R.id.current_capacity_buy_text);
-        maximumCapacity = findViewById(R.id.maximum_capacity_buy_text);
+        TextView maximumCapacity = findViewById(R.id.maximum_capacity_buy_text);
         credits = findViewById(R.id.credits_buy_text);
 
         pI = game.getPlayer().getInventory();
@@ -84,16 +72,16 @@ public class Purchase extends AppCompatActivity {
         startCredits = game.getPlayer().getCredits();
         credits.setText(String.format("%d", startCredits));
 
-        water = findViewById(R.id.buy_water_price);
-        furs = findViewById(R.id.buy_furs_price);
-        food = findViewById(R.id.buy_food_price);
-        ore = findViewById(R.id.buy_ore_price);
-        games = findViewById(R.id.buy_games_price);
-        firearms = findViewById(R.id.buy_firearms_price);
-        medicine = findViewById(R.id.buy_medicine_price);
-        machines = findViewById(R.id.buy_machines_price);
-        narcotics = findViewById(R.id.buy_narcotics_price);
-        robots = findViewById(R.id.buy_robots_price);
+        TextView water = findViewById(R.id.buy_water_price);
+        TextView furs = findViewById(R.id.buy_furs_price);
+        TextView food = findViewById(R.id.buy_food_price);
+        TextView ore = findViewById(R.id.buy_ore_price);
+        TextView games = findViewById(R.id.buy_games_price);
+        TextView firearms = findViewById(R.id.buy_firearms_price);
+        TextView medicine = findViewById(R.id.buy_medicine_price);
+        TextView machines = findViewById(R.id.buy_machines_price);
+        TextView narcotics = findViewById(R.id.buy_narcotics_price);
+        TextView robots = findViewById(R.id.buy_robots_price);
 
         waterS = findViewById(R.id.buy_water_quantity);
         foodS = findViewById(R.id.buy_food_quantity);
@@ -242,7 +230,8 @@ public class Purchase extends AppCompatActivity {
         if (rand1 >= 50) {
             pI.addItem(Item.ITEM_LIST.get(rand2), 1);
             Toast.makeText(Purchase.this, "Wow, how lucky! "
-                   + "You receive (an) extra " + Item.ITEM_LIST.get(rand2) + " from the trader.", Toast.LENGTH_LONG).show();
+                   + "You receive (an) extra " + Item.ITEM_LIST.get(rand2) + " from the trader.",
+                    Toast.LENGTH_LONG).show();
         }
 
         game.getPlayer().setCredits(startCredits);

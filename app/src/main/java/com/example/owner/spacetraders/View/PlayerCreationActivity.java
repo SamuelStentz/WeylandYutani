@@ -14,8 +14,6 @@ import com.example.owner.spacetraders.ViewModel.PlayerViewModel;
 
 public class PlayerCreationActivity extends AppCompatActivity {
 
-    private PlayerViewModel viewModel;
-
     private EditText playerName;
     private EditText pilot;
     private EditText fighter;
@@ -54,11 +52,14 @@ public class PlayerCreationActivity extends AppCompatActivity {
 
     private void onCreatePressed() {
         if ("".equals(playerName.getText().toString())) {
-            Toast.makeText(PlayerCreationActivity.this, "Must enter a name for your character.", Toast.LENGTH_LONG).show();
+            Toast.makeText(PlayerCreationActivity.this,
+                    "Must enter a name for your character.", Toast.LENGTH_LONG).show();
             return;
         } else if ("".equals(pilot.getText().toString()) || "".equals(fighter.getText().toString())
-                || "".equals(trader.getText().toString()) || "".equals(engineer.getText().toString())) {
-            Toast.makeText(PlayerCreationActivity.this, "All skill sections must be filled.", Toast.LENGTH_LONG).show();
+                || "".equals(trader.getText().toString())
+                || "".equals(engineer.getText().toString())) {
+            Toast.makeText(PlayerCreationActivity.this,
+                    "All skill sections must be filled.", Toast.LENGTH_LONG).show();
             return;
         }
         String name = playerName.getText().toString();
@@ -75,7 +76,7 @@ public class PlayerCreationActivity extends AppCompatActivity {
                     + "points are not allowed.", Toast.LENGTH_LONG).show();
             return;
         }
-        viewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        PlayerViewModel viewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
         viewModel.init(name, pilotPoints, fighterPoints, traderPoints, engineerPoints);
 
         startActivity(new Intent(PlayerCreationActivity.this, Game_Status.class));
