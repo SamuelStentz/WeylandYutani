@@ -43,6 +43,10 @@ public class GameState {
     public SolarSystem getPosition() {
         return position;
     }
+    public String getSolarSystemName() {
+        return getPosition().getName();
+    }
+
 
     //Use this method to for the travel screen to show which planets can actually be traveled to.
     public List<SolarSystem> inRange() {

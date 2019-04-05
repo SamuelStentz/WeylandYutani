@@ -96,6 +96,7 @@ public class Player {
     }
 
 
+
     public String toString() {
         return String.format("Player: %s, pilot points: %s, fighter points: %s, trader points: %s, engineer points: %s, credits: %s\n%s",
                 getName(), getPilotSkill(), getFighterSkill(), getTraderSkill(), getEngineerSkill(), this.getCredits(),this.inventory.toString());

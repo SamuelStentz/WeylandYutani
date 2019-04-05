@@ -13,8 +13,16 @@ public class Spaceship {
         return type.getCapacity();
     }
 
+    public void setCapacity(int capacity) {
+        this.type.capacity = capacity;
+    }
+
     public double getCurrentFuel() {
         return currentFuel;
+    }
+
+    public void setCurrentFuel(double fuel) {
+        this.currentFuel = fuel;
     }
 
     public double getMaxFuel() {
@@ -65,6 +73,8 @@ public class Spaceship {
         public String toString () {
             return name;
         }
+
+
     }
 
     public SpaceshipType getSpaceshipType() {

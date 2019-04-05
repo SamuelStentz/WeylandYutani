@@ -19,6 +19,9 @@ public class SolarSystem {
     public int getTechLevel() {
         return techLevel;
     }
+    public int getResourceLevel() {
+        return planet.getResourceLevel();
+    }
 
     public String getName() {
         return name;
@@ -27,6 +30,9 @@ public class SolarSystem {
     public Planet getPlanet() {
         return planet;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public static LinkedList<SolarSystem> generateSolarySystem() {
         Planet pl = new Planet();
@@ -34,6 +40,10 @@ public class SolarSystem {
         for (int i = 0; i < planetList.size(); i++) {
             map.add(new SolarSystem(planetList.get(i)));
         }
+        return map;
+    }
+
+    public LinkedList<SolarSystem> getSolarSystem() {
         return map;
     }
 

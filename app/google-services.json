@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "623421530050",
+    "firebase_url": "https://cs-2340-4004b.firebaseio.com",
+    "project_id": "cs-2340-4004b",
+    "storage_bucket": "cs-2340-4004b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623421530050:android:82f2e125a0f9f550",
+        "android_client_info": {
+          "package_name": "com.example.owner.spacetraders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623421530050-btua3u1srs9nk235rn1e89fdkrg2guet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.owner.spacetraders",
+            "certificate_hash": "549d50af4eb326d88917f27ca606fea94a7aa2dc"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaemfbXrsTelHOTe0xNl1zttzKfxfAXSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623421530050-6050iva33es4bqhhss77a618j15bcs7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

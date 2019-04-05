@@ -15,6 +15,8 @@ import com.example.owner.spacetraders.Model.Planet;
 import com.example.owner.spacetraders.Model.Player;
 import com.example.owner.spacetraders.Model.SolarSystem;
 import com.example.owner.spacetraders.Model.Universe;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,8 @@ import java.util.Random;
 public class PlayerViewModel extends AndroidViewModel {
 
     private Model model;
+
+    private DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
     public PlayerViewModel(@NonNull Application app) {
         super(app);
@@ -41,6 +45,10 @@ public class PlayerViewModel extends AndroidViewModel {
         Random r = new Random();
         SolarSystem sol = solarSystems.get(r.nextInt(solarSystems.size()));
         game.setPosition(sol);
+
+        ///
+        ref.setValue(null);
+
 
         Log.d("Print", player.toString());
         Log.d("Print", game.toString());
