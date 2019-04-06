@@ -33,7 +33,7 @@ public class Travel extends AppCompatActivity {
         game = Model.getInst().getGame();
 
         SolarSystem[] ss = new SolarSystem[game.inRange().size()];
-        ss = game.inRange().toArray(ss);
+        ss = game.getUni().getList().toArray(ss);
 
         Button travelReturn = findViewById(R.id.travel_return_button);
 
@@ -44,36 +44,7 @@ public class Travel extends AppCompatActivity {
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         final SolarSystem[] finalSs = ss;
 
-        listView.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    final int position, long id) {
-                try {
-                    Toast toast=Toast.makeText(getApplicationContext(),finalSs[position]
-                            .toString(),Toast.LENGTH_LONG);
-                    toast.setMargin(50,50);
-                    toast.show();
-                    game.traverse(position);
-
-                    Random rand = new Random();
-                    int rand1 = rand.nextInt(100);
-                    if ((rand1 <= 50) && (game.getPlayer().getCredits() >= 100)) {
-                        game.getPlayer().setCredits(game.getPlayer().getCredits() - 100);
-                        Toast toast1 = Toast.makeText(Travel.this,
-                                "An asteroid has crashed into your ship, causing damage "
-                                        + "to your loading dock. "
-                                       + "100 credits are needed to repair your ship.",
-                                Toast.LENGTH_LONG);
-                        toast1.show();
-                    }
-                } catch (IllegalArgumentException a) {
-                    Toast toast=Toast.makeText(getApplicationContext(),a.getMessage(),
-                            Toast.LENGTH_LONG);
-                    toast.setMargin(50,50);
-                    toast.show();
-                }
-                onTravelReturnPressed();
-            } });
+        listView.setOnItemClickListener(new ourItemClickListener(ss));
 
         travelReturn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,4 +61,41 @@ public class Travel extends AppCompatActivity {
         finish();
     }
 
+    private class ourItemClickListener implements OnItemClickListener {
+
+        private SolarSystem[] ss;
+        public ourItemClickListener(SolarSystem[] ss) {
+            this.ss = ss;
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view,
+                                final int position, long id) {
+            try {
+                Toast toast=Toast.makeText(getApplicationContext(),ss[position]
+                        .toString(),Toast.LENGTH_LONG);
+                toast.setMargin(50,50);
+                toast.show();
+                game.traverse(position);
+
+                Random rand = new Random();
+                int rand1 = rand.nextInt(100);
+                if ((rand1 <= 50) && (game.getPlayer().getCredits() >= 100)) {
+                    game.getPlayer().setCredits(game.getPlayer().getCredits() - 100);
+                    Toast toast1 = Toast.makeText(Travel.this,
+                            "An asteroid has crashed into your ship, causing damage "
+                                    + "to your loading dock. "
+                                    + "100 credits are needed to repair your ship.",
+                            Toast.LENGTH_LONG);
+                    toast1.show();
+                }
+            } catch (IllegalArgumentException a) {
+                Toast toast=Toast.makeText(getApplicationContext(),a.getMessage(),
+                        Toast.LENGTH_LONG);
+                toast.setMargin(50,50);
+                toast.show();
+            }
+            onTravelReturnPressed();
+        }
+    }
 }

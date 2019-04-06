@@ -25,6 +25,8 @@ public class GameState {
 
     public void setUniverse(Universe universe) {this.univ = universe; }
 
+    public Universe getUni() {return this.univ; }
+
     public void setPosition(SolarSystem position) {this.position = position; }
 
     public void setDiff(Difficulty diff) {
@@ -65,6 +67,7 @@ public class GameState {
     public void traverse(int a) {
         SolarSystem target = univ.getList().get(a);
         List<SolarSystem> inRange = inRange();
+
         if (target.getName().equals(position.getName())){
             throw new IllegalArgumentException("Already on that solarsystem.");
         } else if (!inRange.contains(target)) {

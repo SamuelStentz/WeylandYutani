@@ -11,7 +11,6 @@ public class TraderInventory implements Inventory {
     private final Map<Item, Integer> map;
     private final Map<Item, Integer> cost;
 
-
     public TraderInventory(Trader t) {
         map = new HashMap<Item, Integer>();
         cost = new HashMap<Item, Integer>();
