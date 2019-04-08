@@ -15,8 +15,13 @@ public class Spaceship {
         return type.getCapacity();
     }
 
+
     public double getCurrentFuel() {
         return currentFuel;
+    }
+
+    public void setCurrentFuel(double currentFuel) {
+        this.currentFuel = currentFuel;
     }
 
     private double getMaxFuel() {

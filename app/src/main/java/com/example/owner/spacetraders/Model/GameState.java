@@ -78,4 +78,21 @@ public class GameState {
         }
     }
 
+    public int getPositionIndex(SolarSystem sys) {
+        List<SolarSystem> solarSystems = univ.getList();
+        int i = 0;
+        for (SolarSystem s : solarSystems){
+            if (s.equals(sys)) {
+                return i;
+            }
+            i++;
+        }
+        return 0;
+    }
+
+    public void setPositionIndex(int i) {
+        this.position = univ.getList().get(i);
+    }
+
+
 }
