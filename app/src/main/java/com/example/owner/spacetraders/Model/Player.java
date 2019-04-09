@@ -86,6 +86,10 @@ public class Player {
 
     public void removeCredits (int remove) {
         credits = credits - remove;
+
+        if (credits < 0) {
+            credits = 0;
+        }
     }
 
     public void addCredits (int add) {
