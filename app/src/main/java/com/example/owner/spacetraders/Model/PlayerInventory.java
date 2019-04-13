@@ -43,7 +43,6 @@ public class PlayerInventory implements Inventory {
         if (player.getShip().getCapacity() < (capacity + k)) {
             return false;
         }
-
         capacity += k;
         if (map.containsKey(i)) {
             map.put(i, map.get(i) + k);

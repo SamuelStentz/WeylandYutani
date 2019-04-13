@@ -22,6 +22,8 @@ public class Player {
         engineerSkill = 0;
         name = null;
         credits = 1000;
+        this.ship = new Spaceship();
+        this.inventory = new PlayerInventory(this);
     }
 
     public Player (String name, int pilot,
