@@ -6,6 +6,7 @@ import org.junit.Test;
 import com.example.owner.spacetraders.Model.Player;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
 
 public class PlayerTest {
     private Player p;
@@ -63,6 +64,11 @@ public class PlayerTest {
         assertEquals("Condition true", 250, p.getCredits());
         p.removeCredits(250);
         assertEquals("Condition true", 0, p.getCredits());
+
+        //Check if removing too many credits results in condition being false
+        p.removeCredits(300);
+        assertEquals("Condition false", -50, p.getCredits());
+
         //Check if removing at 0 keeps credits at 0
         p.removeCredits(100);
         assertEquals("Condition true", 0, p.getCredits());
