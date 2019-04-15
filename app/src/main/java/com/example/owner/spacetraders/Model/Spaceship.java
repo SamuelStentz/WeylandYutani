@@ -55,7 +55,7 @@ public class Spaceship {
         private final double maxFuel;
 
         SpaceshipType() {
-            capacity = 5;
+            capacity = 30;
             name = "gnat";
             maxFuel = (double) 100;
         }
